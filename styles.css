@@ -259,7 +259,6 @@ nav ul li a:hover::after {
   flex: 1 1 40%;
   display: flex;
   align-items: flex-end;
-
 }
 
 .portfolio-video iframe {
@@ -291,6 +290,7 @@ nav ul li a:hover::after {
   position: relative;
   overflow: hidden;
   margin-bottom: 30px;
+  margin-top: 30px;
 }
 
 .carousel-track {
