@@ -1,0 +1,30 @@
+[
+    {
+        "id": "killer-klowns",
+        "title": "Killer Klowns from Outer Space: The Game (2024)",
+        "role": "Senior Associate Producer",
+        "image": "images/work-1.png",
+        "imageAlt": "Killer Klowns from Outer Space: The Game",
+        "link": "https://store.steampowered.com/app/1556100/Killer_Klowns_from_Outer_Space_The_Game/",
+        "bullets": [
+            "Led production from Alpha to pre-release.",
+            "Scaled the team from 25 to 70 developers, introducing Agile frameworks and cross-discipline pipelines.",
+            "Transitioned the studio to Jira-based tracking with automations, saving ~1 day per sprint in management overhead.",
+            "Established an internal bug tracking process, improving resolution and visibility.",
+            "Managed publisher and stakeholder communications, roadmaps, and milestone deliveries.",
+            "Supported the formation of a Game Analytics team to guide feature development through data insights."
+        ]
+    },
+    {
+        "id": "captain-toonhead",
+        "title": "Captain ToonHead vs the Punks from Outer Space (2021)",
+        "role": "Senior Associate Producer",
+        "image": "images/work-2.png",
+        "imageAlt": "Captain ToonHead vs the Punks from Outer Space",
+        "link": "https://store.steampowered.com/app/942390/Captain_ToonHead_vs_the_Punks_from_Outer_Space/",
+        "bullets": [
+            "Supported production from Gold to Launch.",
+            "Developed automations to input text into game's dialogue system."
+        ]
+    }
+]

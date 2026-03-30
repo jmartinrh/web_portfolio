@@ -1,0 +1,1 @@
+On 4/30 we removed a data cap of 240+ mins as well as historically backfilled the data in this CSV. You can now view the full session length data set.

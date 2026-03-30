@@ -1,0 +1,321 @@
+[
+    {
+        "id": "dnd-zombie-dragon",
+        "title": "D&D Zombie Dragon Adventure (2026)",
+        "externalLink": "https://www.fortnite.com/@teracreators/2525-9596-3235",
+        "platform": "Fortnite Creative / UEFN",
+        "roles": "Systems Designer & Level Designer",
+        "description": "A <em>Dungeons and Dragons</em> flavoured roguelike in Fortnite Creative.",
+        "bullets": [
+            "Led collaboration between design and engineering teams.",
+            "Designed a multiphase boss encounter and custom enemies.",
+            "Designed and implemented core gameplay, progression systems, reward system, and metagame loops.",
+            "Designed and implemented room encounters and events.",
+            "Devised balance formulas that used hit-to-kill as the lynchpin of encounters and game progression.",
+            "Built and greyboxed layouts for 50+ rooms and polished wayfinding flows to support gameplay, tone, and pacing."
+        ],
+        "media": { "type": "video", "src": "video/DND_Trailer.mp4" },
+        "challengeParagraphs": [
+            "Creating a 50+ room interconnected map with multiple routes required careful planning and rules design to avoid player softlocks and edge cases.",
+            "Devising formulas and charts that helped us design more balanced encounters.",
+            "Couldn't find a good balance between difficulty and pacing; 45% players still found it too hard."
+        ],
+        "stats": {
+            "period": "Jan 16 – Mar 27, 2026",
+            "headline": [
+                { "label": "Total Plays",     "value": "383K+",    "icon": "fa-solid fa-gamepad" },
+                { "label": "Peak Concurrent", "value": "7,400",    "icon": "fa-solid fa-users" },
+                { "label": "Avg Rating",      "value": "7.74 / 10","icon": "fa-solid fa-star" },
+                { "label": "Fun Rate",        "value": "75.5%",    "icon": "fa-regular fa-face-smile" }
+            ],
+            "retention": {
+                "label": "Player Retention",
+                "updates": 18,
+                "scale": 50,
+                "metrics": [
+                    { "name": "Day 1", "start": 19.0, "end": 37.3, "unit": "%" },
+                    { "name": "Day 7", "start": 4.4,  "end": 23.4, "unit": "%" }
+                ]
+            },
+            "satisfaction": {
+                "label": "Difficulty Reception",
+                "rating": { "avg": "7.74", "perfect": "38.8%", "label": "gave 10/10" },
+                "difficulty": [
+                    { "label": "Just Right", "value": 48.1, "color": "teal" },
+                    { "label": "Too Hard",   "value": 45.2, "color": "neutral" },
+                    { "label": "Too Easy",   "value": 6.7,  "color": "dim" }
+                ]
+            },
+            "sessions": {
+                "value": "2,125+",
+                "detail": "sessions exceeded 60 minutes"
+            }
+        },
+        "carousel": null
+    },
+    {
+        "id": "null-core",
+        "title": "Null Core (<em>unreleased</em>)",
+        "externalLink": null,
+        "platform": "PC / Unity",
+        "roles": "Game Designer & Level Designer",
+        "description": "A rogue-like bullet-hell tank adventure. Clear dungeons solo or co-op as you follow a group of rebel tanks fighting against an evil empire.",
+        "bullets": [
+            "Designed player in-run progression systems.",
+            "Designed metagame progression systems",
+            "Designed player and enemy abilities and variants.",
+            "Designed enemy encounters and level layouts."
+        ],
+        "media": { "type": "video", "src": "video/NullCore.mp4" },
+        "challengeParagraphs": [
+            "Designing an upgrade system that delivers significant choices to the player and are not just a 'numbers go up' moment."
+        ],
+        "carousel": null
+    },
+    {
+        "id": "courtyard-king-twdu",
+        "title": "Courtyard King: The Walking Dead Universe (2025)",
+        "externalLink": "https://www.fortnite.com/@skybound-games/2427-7395-6416",
+        "platform": "Fortnite Creative / UEFN",
+        "roles": "Project Lead, Systems Designer & Level Designer",
+        "description": "An adaptation of <em>The Walking Dead</em> IP into a 3-way king of the hill-style game with roguelite elements in Fortnite Creative.",
+        "bullets": [
+            "Led the project from concept to live-service launch, coordinating cross-discipline collaboration.",
+            "Designed and implemented core gameplay, progression systems, reward system, enemy waves, and metagame loops.",
+            "Designed player ranking system.",
+            "Built and greyboxed core level layouts and wayfinding flows to support gameplay, tone, and pacing.",
+            "Diagnosed retention and satisfaction gaps through live analytics; drove 36 data-driven updates that improved Day 1 retention 5× and Day 7 retention 20×."
+        ],
+        "media": { "type": "video", "src": "video/TWDU_CY_GameLoop.mp4" },
+        "challengeParagraphs": [
+            "Designing a dynamic enemy spawn and waves system that could keep all game areas challenging while prioritizing big enemy hordes in the capture points with limited resources.",
+            "Making the interconnected level readable and navigable for all teams as capture points changed location.",
+            "Performance drops kept us from addressing key balance and UX problems early."
+        ],
+        "stats": {
+            "period": "May 16 – Oct 31, 2025",
+            "headline": [
+                { "label": "Total Plays",     "value": "2.6M+", "icon": "fa-solid fa-gamepad" },
+                { "label": "Peak Concurrent", "value": "215K",  "icon": "fa-solid fa-users" },
+                { "label": "Fun Rate",        "value": "49.6%", "icon": "fa-regular fa-face-meh" },
+                { "label": "Updates Shipped", "value": "36",    "icon": "fa-solid fa-rotate" }
+            ],
+            "retention": {
+                "label": "Retention — Launch vs. Post-Update",
+                "updates": 36,
+                "scale": 40,
+                "metrics": [
+                    { "name": "Day 1", "start": 7.0,  "end": 35.0, "unit": "%" },
+                    { "name": "Day 7", "start": 1.0,  "end": 22.0, "unit": "%" }
+                ]
+            },
+            "satisfaction": {
+                "label": "Difficulty Reception",
+                "rating": { "avg": "5.85", "perfect": "20.6%", "label": "gave 1/10 · 25.8% gave 10/10" },
+                "difficulty": [
+                    { "label": "Just Right", "value": 32.6, "color": "teal" },
+                    { "label": "Too Hard",   "value": 45.6, "color": "neutral" },
+                    { "label": "Too Easy",   "value": 21.8, "color": "dim" }
+                ]
+            },
+            "sessions": {
+                "value": "5×",
+                "detail": "Day 1 retention improvement through data-driven live updates"
+            }
+        },
+        "carousel": {
+            "track": "carousel-track",
+            "buttons": true,
+            "lightboxGroup": "TWDU_CY_SET",
+            "images": [
+                "images/TWDU_CY_GameFlow.jpg",
+                "images/TWDU_CY_LevelProgression.gif",
+                "images/TWDU_CY_RewardsDiag.jpg",
+                "images/TWDU_CY_Rewards.png",
+                "images/TWDU_CY_Rarities.png",
+                "images/TWDU_CY_RewardStore.png",
+                "images/TWDU_CY_WaveManagement.png",
+                "images/TWDU_CY_Waves.gif",
+                "images/TWDU_CU_BasicLayout.jpg",
+                "images/TWDU_CY_Greybox1.png",
+                "images/TWDU_LayoutResult.png",
+                "images/TWDU_CY_FinalMap.png"
+            ]
+        }
+    },
+    {
+        "id": "boss-lab",
+        "title": "Boss Lab Project (2024)",
+        "externalLink": null,
+        "platform": "PC / UE 5.5",
+        "roles": "Project Lead, Game Designer",
+        "description": "A boss-rush roguelike where creating more powerful boss-encounters defined character progression.",
+        "bullets": [
+            "Designed modular skill and ability systems for both player and boss characters.",
+            "Desgined and implemented skill tree system and UI using UMG and BPs.",
+            "Designed and implemented player's range abilities using BPs.",
+            "Conducted playtesting and player surveying to refine controls and balance."
+        ],
+        "media": {
+            "type": "iframe",
+            "src": "https://www.youtube.com/embed/7mQSr-oY2Xw?si=BgupRKAtNRcn7fdJ"
+        },
+        "challengeParagraphs": [
+            "Exploring a counterintuitive approach to player agency: advancing was about creating your own tougher challenges, not mechanical empowerment.",
+            "Designing modular character skills and abilities for enemies that could be mixed and matched during play."
+        ],
+        "carousel": {
+            "track": "carousel-track",
+            "buttons": true,
+            "lightboxGroup": "bosslab-set",
+            "images": [
+                "images/BossLab_gif01.gif",
+                "images/BossLabs_Gameflow.jpg",
+                "images/BossLab_player.png",
+                "images/Bosslabgif4.gif",
+                "images/Bosslabgif2.gif",
+                "images/BossLab_BossA.jpg",
+                "images/BossLab_BossB.jpg"
+            ]
+        }
+    },
+    {
+        "id": "species",
+        "title": "Species (2024)",
+        "externalLink": null,
+        "platform": "Tabletop Card Game",
+        "roles": "Project Lead, Game Designer",
+        "description": "Species is a 2-4 player card game where each takes the role of ecosystem stewards and work towards keeping their chosen ecosystem in balance as new species arrive. The objective is to foster a diverse ecosystem while managing effects triggered by species.",
+        "downloadLink": {
+            "href": "documents/Ruleset Species v1.0.pdf",
+            "label": "Download Game v1.0 Ruleset"
+        },
+        "bullets": [
+            "Designed card mechanics and card layouts for an educational, environment-themed education game.",
+            "Conducted research on edutainment games and Canadian invasive species.",
+            "Organized and facilitated playtest sessions, gathering data on mechanics' clarity, scientific content, layout, and user experience."
+        ],
+        "media": null,
+        "challengeParagraphs": [
+            "Balancing accessibility, gameplay, and scientific accuracy to ensure the game was engaging and informative without overloading players with facts.",
+            "Making a game that could be a <em>teaching tool</em> but was not itself teaching the content. I wanted to foster a context where players could learn."
+        ],
+        "carousel": {
+            "track": "carousel-track-2",
+            "buttons": true,
+            "lightboxGroup": "image-set",
+            "images": [
+                "images/Species01.png",
+                "images/Species02.png",
+                "images/Species03.png",
+                "images/Species05.png",
+                "images/Species04.png",
+                "images/Species07.png",
+                "images/Species09.png",
+                "images/Species10.png",
+                "images/Species11.png",
+                "images/Species12.png",
+                "images/Species13.png",
+                "images/Species14.png",
+                "images/Species_01.jpg",
+                "images/Species_02.jpg",
+                "images/Species_03.jpg"
+            ]
+        }
+    },
+    {
+        "id": "pvpve-project",
+        "title": "Unpublished PvPvE Project (2024)",
+        "externalLink": null,
+        "platform": "Fortnite Creative / UEFN",
+        "roles": "Project Lead, Game & Level Designer",
+        "description": "A PvPvE multiplayer horror-themed game that aimed to adapt and mix core elements from the game Evolve with some battle royale elements from Fortnite in a 1v4 match.",
+        "bullets": [
+            "Led the project's ideation and prototype phases, coordinating cross-discipline collaboration.",
+            "Designed core gameplay, progression systems, reward system, and metagame loops.",
+            "Built and greyboxed core level layout."
+        ],
+        "media": null,
+        "challengeParagraphs": [
+            "Designing and balancing two separate incentive and progression systems for both teams, with similar depth and replayability.",
+            "Limiting functionality to mostly out-of-the-box UEFN solutions."
+        ],
+        "carousel": {
+            "track": "carousel-track",
+            "buttons": false,
+            "lightboxGroup": "Sigma_Set",
+            "images": [
+                "images/Sigma_GameFlow2.png",
+                "images/Sigma_Gameflow3.png",
+                "images/Sigma_LAyout.jpg"
+            ]
+        }
+    },
+    {
+        "id": "forgotten-runiverse",
+        "title": "Forgotten Runiverse (2023)",
+        "externalLink": "https://runiverse.world/",
+        "platform": "PC / Web",
+        "roles": "RPG Game Designer",
+        "description": "A fantasy pixel art MMORPG with TBA combat system where players play as wizards that can craft their own spells and items.",
+        "bullets": [
+            "Defined combat and item formulas.",
+            "Designed character abilities and items.",
+            "Designed combat encounters and rewards.",
+            "Developed combat system simulations to inform balancing decisions.",
+            "Coordinated with other systems designers to balance player-led economy."
+        ],
+        "media": {
+            "type": "iframe",
+            "src": "https://www.youtube.com/embed/z1ALPAewJVU?si=UjblGnqBu5d3ZwKF"
+        },
+        "challengeParagraphs": [
+            "Balancing stats, items, and combat that were intricately tied to a player-led creations and economy.",
+            "Creating engaging asymmetry in item combinations and stat bases to encourage player builds."
+        ],
+        "carousel": {
+            "track": "carousel-track",
+            "buttons": true,
+            "lightboxGroup": "Runiverse-Set",
+            "images": [
+                "images/Runiverse_crafting.gif",
+                "images/Runiverese_stats.webp",
+                "images/Runiverse_stats2.webp",
+                "images/Runiverse_player.webp",
+                "images/Runiverse_combat.webp"
+            ]
+        }
+    },
+    {
+        "id": "racoon-princess",
+        "title": "Racoon Princess (2023)",
+        "externalLink": "https://micklen.itch.io/racoon-princess",
+        "platform": "PC / Unity",
+        "roles": "Project Lead, Game & Narrative Designer",
+        "description": "A fantasy pixel art adventure proof of concept where you take the role of the Racoon Princess, lost heir to a kingdom she can decide to retake or not.",
+        "bullets": [
+            "Designed game world, story, and characters.",
+            "Integrated Yarn Spinner to develop game's branching narrative."
+        ],
+        "media": {
+            "type": "video",
+            "src": "video/Racoon_ScenarioA.mp4",
+            "poster": "images/Racoon_Title.png"
+        },
+        "challengeParagraphs": [
+            "Managing and implementing a branching narrative system."
+        ],
+        "carousel": {
+            "track": "carousel-track",
+            "buttons": true,
+            "lightboxGroup": "racoon-set",
+            "images": [
+                "images/Racoon_Screenshot1.png",
+                "images/Racoon_Screenshot2.png",
+                "images/Racoon_dialogs.jpg",
+                "images/Racoon_Screenshot3.png",
+                "images/Racoon_dialogs2.jpg"
+            ]
+        }
+    }
+]

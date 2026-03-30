@@ -1,0 +1,22 @@
+[
+    {
+        "icon": "fa-solid fa-glasses",
+        "title": "Clarity",
+        "description": "Ensuring players (and devs!) know what, why and how."
+    },
+    {
+        "icon": "fa-solid fa-people-carry-box",
+        "title": "Collaboration",
+        "description": "Building shared languages, communicating intent, creating focus."
+    },
+    {
+        "icon": "fa-solid fa-heart",
+        "title": "Players",
+        "description": "It's about them and making their choices meaningful."
+    },
+    {
+        "icon": "fa-solid fa-arrows-spin",
+        "title": "Iteration",
+        "description": "Play, validate, refine, evolve. Repeat."
+    }
+]
