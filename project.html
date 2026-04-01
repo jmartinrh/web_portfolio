@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Martin Rodriguez</title>
+    <title>Project — Martin Rodriguez</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/6f58c6ab29.js" crossorigin="anonymous"></script>
+    <link href="lightbox.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -27,35 +28,22 @@
             </div>
 
             <ul id="sidemenu">
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Greeting Section -->
-    <div id="Home"></div>
-    <div class="greeting">
-        <h1>Hi, I'm Martín</h1>
-        <i class="fa-solid fa-gamepad"></i>
-        <p>
-            I am a Game Designer with with a producer's instinct for execution and 5+ years of industry experience.
-            I focus on translating creative vision into cohesive gameplay systems through collaboration and iteration.
-        </p>
+    <!-- Back navigation -->
+    <div class="project-back-bar">
+        <a href="index.html#portfolio">
+            <i class="fa-solid fa-arrow-left"></i> Back
+        </a>
     </div>
 
-    <!-- Design Pillars Section -->
-    <section id="services">
-        <div class="container">
-            <h2 class="sub-title">My Design Pillars</h2>
-            <div id="pillars-container" class="services-list"></div>
-        </div>
-    </section>
-
-    <!-- Games Grid Section -->
+    <!-- Project content -->
     <section id="portfolio">
         <div class="container">
-            <h2 class="sub-title">Games</h2>
-            <div id="projects-container"></div>
+            <div id="project-container"></div>
         </div>
     </section>
 
@@ -74,7 +62,8 @@
         <p>Copyright @ Martin Rodriguez, 2025 with help of website tutorials and Google</p>
     </div>
 
-    <script src="main.js"></script>
+    <script src="project.js"></script>
+    <script src="lightbox-plus-jquery.js"></script>
 
 </body>
 

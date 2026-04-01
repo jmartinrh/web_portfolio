@@ -15,6 +15,7 @@
             "Built and implemented 50+ rooms and polished wayfinding flows to support gameplay, tone, and pacing.",
             "Diagnosed retention and satisfaction gaps through live analytics."
         ],
+        "thumbnail": null,
         "media": { "type": "video", "src": "video/DND_Trailer.mp4" },
         "challengeParagraphs": [
             "Creating a legible and navigable interconnected map while avoiding softlocks.",
@@ -66,6 +67,7 @@
             "Designed player 'boons' and upgrades.",
             "Designed and implemented enemy encounters and level layouts."
         ],
+        "thumbnail": null,
         "media": { "type": "video", "src": "video/NullCore.mp4" },
         "challengeParagraphs": [
             "Creating 'boons' and upgrades that can synergize across different playstyles."
@@ -86,6 +88,7 @@
             "Built and implemented level layouts and wayfinding flows to support gameplay, tone, and pacing.",
             "Diagnosed retention and satisfaction gaps through live analytics."
         ],
+        "thumbnail": "images/TWDU_CY_FinalMap.png",
         "media": { "type": "video", "src": "video/TWDU_CY_GameLoop.mp4" },
         "challengeParagraphs": [
             "Designing a dynamic enemy system that maintained challenge for 1 or 12 players in different game areas.",
@@ -156,6 +159,7 @@
             "Designed and implemented player's range abilities using BPs.",
             "Conducted playtesting and player surveying to refine controls and balance."
         ],
+        "thumbnail": "images/BossLab_gif01.gif",
         "media": {
             "type": "iframe",
             "src": "https://www.youtube.com/embed/7mQSr-oY2Xw?si=BgupRKAtNRcn7fdJ"
@@ -195,6 +199,7 @@
             "Conducted research on edutainment games and Canadian invasive species.",
             "Organized and facilitated playtest sessions, gathering data on mechanics' clarity, scientific content, layout, and user experience."
         ],
+        "thumbnail": "images/Species01.png",
         "media": null,
         "challengeParagraphs": [
             "Balancing accessibility, gameplay, and scientific accuracy to ensure the game was engaging and informative without overloading players with facts.",
@@ -236,8 +241,9 @@
             "Designed core gameplay, progression systems, reward system, and metagame loops.",
             "Built and implemented core level layout."
         ],
+        "thumbnail": "images/Sigma_GameFlow2.png",
         "media": null,
-        "challengeParagraphs": [            
+        "challengeParagraphs": [
             "Designing and balancing asymmetric teams, with different incentives and progressions."
         ],
         "carousel": {
@@ -265,6 +271,7 @@
             "Developed combat system simulations to inform balancing decisions.",
             "Coordinated with other systems designers to balance player-led economy."
         ],
+        "thumbnail": "images/Runiverse_combat.webp",
         "media": {
             "type": "iframe",
             "src": "https://www.youtube.com/embed/z1ALPAewJVU?si=UjblGnqBu5d3ZwKF"
@@ -297,6 +304,7 @@
             "Designed game world, story, and characters.",
             "Integrated Yarn Spinner to develop game's branching narrative."
         ],
+        "thumbnail": "images/Racoon_Title.png",
         "media": {
             "type": "video",
             "src": "video/Racoon_ScenarioA.mp4",
