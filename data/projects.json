@@ -90,7 +90,7 @@
         "challengeParagraphs": [
             "Designing a dynamic enemy system that maintained challenge for 1 or 12 players in different game areas.",
             "Making the interconnected level readable and navigable for all teams as capture points changed location.",
-            "Performance drops kept us from addressing key balance issues early."
+            "Balancing competing priorities in performance and UX."
         ],
         "stats": {
             "period": "May 16 – Oct 31, 2025",
