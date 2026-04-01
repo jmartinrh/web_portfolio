@@ -235,7 +235,7 @@ function renderAll({ projects, pillars }) {
         pillars.map(renderPillar).join('');
 
     document.getElementById('projects-container').innerHTML =
-        projects.map(renderProject).join('');
+        projects.filter(p => !p.hidden).map(renderProject).join('');
 
     initCarousels();
 }

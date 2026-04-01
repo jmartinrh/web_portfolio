@@ -225,6 +225,7 @@
     },
     {
         "id": "pvpve-project",
+        "hidden": true,
         "title": "Unpublished PvPvE Project (2024)",
         "externalLink": null,
         "platform": "Fortnite Creative / UEFN",
