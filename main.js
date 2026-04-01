@@ -202,30 +202,14 @@ function renderProject(project) {
         </section>`;
 }
 
-function renderExperience(exp) {
-    return `
-        <div class="work">
-            <img src="${exp.image}" alt="${exp.imageAlt}" loading="lazy">
-            <div class="layer">
-                <h2>${exp.title}</h2>
-                <h3>${exp.role}</h3>
-                <ul>${renderBullets(exp.bullets)}</ul>
-                <a href="${exp.link}" target="_blank" rel="noopener noreferrer">
-                    <i class="fa-solid fa-link"></i>
-                </a>
-            </div>
-        </div>`;
-}
-
 // ── Data loading and init ─────────────────────────────────────────────────────
 
 async function loadData() {
-    const [projects, experiences, pillars] = await Promise.all([
+    const [projects, pillars] = await Promise.all([
         fetch('data/projects.json').then(r => r.json()),
-        fetch('data/experiences.json').then(r => r.json()),
         fetch('data/pillars.json').then(r => r.json()),
     ]);
-    return { projects, experiences, pillars };
+    return { projects, pillars };
 }
 
 function initCarousels() {
@@ -246,15 +230,12 @@ function initCarousels() {
     });
 }
 
-function renderAll({ projects, experiences, pillars }) {
+function renderAll({ projects, pillars }) {
     document.getElementById('pillars-container').innerHTML =
         pillars.map(renderPillar).join('');
 
     document.getElementById('projects-container').innerHTML =
         projects.map(renderProject).join('');
-
-    document.getElementById('experiences-container').innerHTML =
-        experiences.map(renderExperience).join('');
 
     initCarousels();
 }

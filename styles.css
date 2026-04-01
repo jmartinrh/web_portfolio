@@ -2,14 +2,14 @@
 
 :root {
 
-    --color-darker-gray: #0B0C10;
-    --color-medium-gray: #1F2833;
+    --color-darker-gray: #0C0F12;
+    --color-medium-gray: #1C2730;
     --color-light-gray: #C5C6C7;
-    --color-light-teal: #66fCF1;
-    --color-teal: #2f6865;
+    --color-light-teal: #52D9D0;
+    --color-teal: #3D8280;
 
     --color-black: #000000;
-    --color-white: #c4bcbc;
+    --color-white: #D2D4D6;
 }
 
 *
@@ -201,12 +201,12 @@ nav ul li a:hover::after {
     max-width: 500px;
     background: var(--color-teal);
     padding: 30px;
-    font-size: 13px;
-    font-weight: 300;
+    font-size: 14px;
+    font-weight: 400;
     border-radius: 0 10px 10px 0;
     border-left: 3px solid var(--color-light-teal);
     transition: background 0.5s, transform 0.5s;
-    text-align: center;
+    text-align: left;
 }
 
 .challenge-content:hover {
@@ -214,12 +214,17 @@ nav ul li a:hover::after {
 }
 
 .challenge-content h2 {
-    font-size: 0.72rem;
+    font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--color-light-teal);
+    color: var(--color-white);
     margin-bottom: 0.875rem;
+}
+
+.challenge-content h2 i {
+    color: var(--color-light-teal);
+    margin-right: 6px;
 }
 
 .challenge-content p {
@@ -306,7 +311,7 @@ nav ul li a:hover::after {
 .portfolio-text p {
   line-height: 1.75;
   color: var(--color-light-gray);
-  text-align: justify;
+  text-align: left;
 }
 
 .portfolio-details ul {
@@ -730,7 +735,7 @@ nav ul li a:hover::after {
 .btn
 {
     display: block;
-    margin: 50px auto;
+    margin: 1.5rem auto;
     width: fit-content;
     border: 1px solid var(--color-teal);
     padding: 14px 50px;
@@ -878,7 +883,7 @@ nav ul li a:hover::after {
     display: grid;
     grid-template-columns: 1fr 1fr auto;
     gap: 0.75rem;
-    align-items: start;
+    align-items: stretch;
 }
 
 .dash-chart-card {
@@ -1143,22 +1148,32 @@ nav .fa-solid
     }
 
   .portfolio-content {
-    flex-direction: column;        /* Stack text and video */
-    align-items: flex-start;       /* Reset alignment for mobile */
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .portfolio-details,
   .portfolio-video {
-    flex: 1 1 100%;                /* Full width */
+    flex: 1 1 100%;
   }
 
   .portfolio-video {
-    align-self: auto;              /* Let it flow naturally below text */
+    align-self: auto;
   }
 
   .portfolio-video video {
     width: 100%;
     height: auto;
+  }
+
+  /* Right column stacks full-width; video reverts to natural height */
+  .portfolio-right {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  .portfolio-right .portfolio-video {
+    flex: 0 0 auto;
   }
 
   .dashboard-stats {
@@ -1174,3 +1189,57 @@ nav .fa-solid
   }
 
 }
+
+/* ── Lightbox overrides (replace missing PNG assets with CSS) ────────────── */
+.lb-nav a.lb-prev,
+.lb-nav a.lb-next {
+    background-image: none;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    transition: opacity 0.2s;
+}
+.lb-nav a.lb-prev { justify-content: flex-start; padding-left: 12px; }
+.lb-nav a.lb-next { justify-content: flex-end;   padding-right: 12px; }
+
+.lb-nav a.lb-prev::after,
+.lb-nav a.lb-next::after {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1;
+    backdrop-filter: blur(4px);
+    transition: background 0.2s, border-color 0.2s;
+}
+.lb-nav a.lb-prev::after { content: '‹'; }
+.lb-nav a.lb-next::after { content: '›'; }
+.lb-nav a.lb-prev:hover::after,
+.lb-nav a.lb-next:hover::after {
+    background: rgba(0, 0, 0, 0.8);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.lb-dataContainer {
+    padding-top: 14px;
+}
+
+.lb-data .lb-close {
+    background-image: none;
+    opacity: 0.85;
+    color: #fff;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s;
+}
+.lb-data .lb-close::after  { content: '✕'; }
+.lb-data .lb-close:hover   { opacity: 1; }
