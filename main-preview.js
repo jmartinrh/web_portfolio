@@ -223,9 +223,9 @@ function renderExperience(exp) {
 
 async function loadData() {
     const [projects, experiences, pillars] = await Promise.all([
-        fetch('data/projects.json').then(r => r.json()),
-        fetch('data/experiences.json').then(r => r.json()),
-        fetch('data/pillars.json').then(r => r.json()),
+        fetch('highlights/projects.json').then(r => r.json()),
+        fetch('highlights/experiences.json').then(r => r.json()),
+        fetch('highlights/pillars.json').then(r => r.json()),
     ]);
     return { projects, experiences, pillars };
 }

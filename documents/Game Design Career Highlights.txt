@@ -1,0 +1,122 @@
+﻿Game Design Career Highlights
+
+
+DND - Balancing
+
+
+Context
+Our DND island offered players three routes to reach the final boss fight: easy, medium, and hard. Tougher route, higher reward. We had a simple system tying room and route difficulty to coins-per-enemy and type of biome.
+
+
+Problem
+The original system worked to deliver the rewards we wanted for player progression. However, as we expanded our enemy selection and included minibosses, we needed better balancing tools for the whole experience. Additionally, we had delivered encounters that players identified as frustrating and unrewarding.
+
+
+Goal
+Creating a new basis for our game’s balance so we could tweak rooms with data, not guts, and increase player retention.
+
+
+Solution
+The solution was multifaceted and required me to approach the problem both from systems and level design.
+
+
+Alongside our Product Manager Jorge Castaño and User Researcher Nicolás Perez we reviewed game analytics and player feedback. We identified the rooms players found unfair: rooms with high death and quit ratios. 
+
+
+Some rooms had a bad combination of layout and enemy weapons: Explosive weapons in Fortnite are powerful and can damage players behind cover. Layouts that limited cover rotation options or had strong enemy highground positions put players at a big disadvantage. Other rooms were too crowded. In some parts of the map, the challenge hike between rooms was too steep and poorly communicated.
+
+
+This prompted me to review level design elements that impacted difficulty: room layouts, exit signposting, enemy positions, and cover. I highlighted rooms that needed fixes and drafted actionables.
+
+
+At the same time I had discussions with my Design Lead César Solis to understand how we wanted to tie room difficulty and the economy together and started working on some formulas. I calculated each enemies’ individual Threat Value and then each room's.
+
+
+Defensive Threat Value
+	(Total Health / 1000)^Defensive Coefficient
+	Offensive Threat Value
+	DPS * Accuracy Value * Weapon Type / Enemy Max DPS
+	Individual Threat Value
+	Defensive Value * Offensive Value
+	Group Threat Value
+	SUM(Individual Threat…)
+	Room Threat Value
+	LOG10((Threat * Threat Coefficient)*(Number of Enemies in Room ^ Crowd Exponent)) + Base Threat Coefficient
+	
+
+Graphing both Room Difficulty and gold-per-enemy values empowered us to clearly see the relationship between difficulty and reward and better understand why players were complaining. We identified priorities, strategies, and a roadmap that would quickly address player feedback.
+
+
+* Adjusting enemy health, number, and weapon selection
+* Adjusting enemy rewards
+* Adjusted problematic enemy spawn locations and timing
+* Increased cover and adjusted navigation in some rooms
+* Added sign posting that indicated increased challenge in exits that took players from one route to another
+* Improved clarity of one-way and alternative room exits
+
+
+Result
+First, we now had a tool that at a glance helped us understand our games' difficulty and encounter progression. This also empowered our capacity to tweak difficulty when needed.
+
+
+But more importantly, the changes had a big impact on player retention and difficulty perception.
+
+
+Walking Dead Level Design
+Context
+For The Walking Dead experience, I had designed an interconnected map that had 3 mirrored team areas. Each team had to go through a PvE section before reaching the PvPvE arenas where the king-of-the hill dynamics happened. I wanted a mix of claustrophobic spaces to spotlight the zombies and bigger arenas that supported PvE fighting.
+
+
+The Problem
+The dark and grimy aesthetic of the assets, paired with an objective that changed locations from above ground to underground and back made navigation confusing for players. Internal playtesters were getting disoriented and had trouble keeping up with the king-of-the-hill. The mirrored nature of the map also confused players as to where their team bases were located once in the main arenas.
+
+
+Goal
+Add signposting and HUD information to help players find their way through the prison map.
+
+
+Solution
+There were several fronts I had to tackle. First I went over the playtest reports and identified the most critical areas where players got lost. I followed by walking the level and getting a wayfinding understanding of what the problems could be. Disorientation mainly happened because decoration was too busy, pathing was not clear, and lighting was not being used to direct player attention.
+
+
+Knowing just an art and light pass was not enough, I reviewed competitive shooters like CS:GO, Valorant, Apex Legends and Epic’s own Ballistic game mode to bring over some additional good practices. I then consulted with our UI/UX lead Andrés Pisso to get his take on what HUD elements would best help players find their way.
+
+
+With all the information in hand I made a plan and coordinated meetings to present to stakeholders and other project area leads to get buy-in and feedback. Coordinated the plan with production, checking for dependencies and got started:
+
+
+* Collaborated with environmental to add team colours to structures, clear pathing, and use light to direct player attention to exists.
+* Added graffiti decals to signpost exits, areas, and directionality.
+* Created a system that turned some decals on or off depending on where the capture area was located.
+* Added HUD beacons that clamped to screen to mark each capture area when active
+* Added HUD objective messages.
+* Added notifications for important state changes that needed player attention.
+
+
+Result
+I delivered a map with tools that directed navigation diegetically and non-diegetically. Through playtesting and launch, we did not receive complaints or issues regarding wayfinding or objective clarity.
+
+
+DND D20 system
+
+
+
+
+Walking Dead Difficulty System
+Context
+
+
+
+
+Problem
+The game was playable by 1 to 12 players and the difficulty of the different areas had to adjust accordingly. UEFN NPC’s parameters cannot be edited live, so we had to come up with a different solution. Additionally, we couldn’t have more than 90 entities running simultaneously.
+
+
+Goal 
+Design and implement a dynamic difficulty system for the PvE portion of the experience 
+
+
+Solution
+
+
+Result

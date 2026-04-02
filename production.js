@@ -18,7 +18,7 @@ function renderExperience(exp) {
 }
 
 async function loadData() {
-    const experiences = await fetch('data/experiences.json').then(r => r.json());
+    const experiences = await fetch('highlights/experiences.json').then(r => r.json());
     return experiences;
 }
 

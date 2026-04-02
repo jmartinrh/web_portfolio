@@ -9,6 +9,32 @@ function renderPillar(pillar) {
         </div>`;
 }
 
+function renderHighlightCard(highlight) {
+    if (highlight.comingSoon) {
+        return `
+        <div class="project-card project-card--coming-soon">
+            <div class="project-card-image">
+                <img src="${highlight.image}" alt="${highlight.title}" loading="lazy">
+            </div>
+            <div class="project-card-info">
+                <p class="highlight-card-tag">${highlight.tag}</p>
+                <h3>${highlight.title}</h3>
+                <span class="coming-soon-badge">Coming Soon</span>
+            </div>
+        </div>`;
+    }
+    return `
+        <a href="${highlight.link}" class="project-card">
+            <div class="project-card-image">
+                <img src="${highlight.image}" alt="${highlight.title}" loading="lazy">
+            </div>
+            <div class="project-card-info">
+                <p class="highlight-card-tag">${highlight.tag}</p>
+                <h3>${highlight.title}</h3>
+            </div>
+        </a>`;
+}
+
 function renderProjectCard(project) {
     const plainTitle = project.title.replace(/<[^>]+>/g, '');
 
@@ -29,16 +55,22 @@ function renderProjectCard(project) {
 // ── Data loading and init ─────────────────────────────────────────────────────
 
 async function loadData() {
-    const [projects, pillars] = await Promise.all([
-        fetch('data/projects.json').then(r => r.json()),
-        fetch('data/pillars.json').then(r => r.json()),
+    const [projects, pillars, highlights] = await Promise.all([
+        fetch('highlights/projects.json').then(r => r.json()),
+        fetch('highlights/pillars.json').then(r => r.json()),
+        fetch('highlights/highlights.json').then(r => r.json()),
     ]);
-    return { projects, pillars };
+    return { projects, pillars, highlights };
 }
 
-function renderAll({ projects, pillars }) {
+function renderAll({ projects, pillars, highlights }) {
     document.getElementById('pillars-container').innerHTML =
         pillars.map(renderPillar).join('');
+
+    document.getElementById('highlights-container').innerHTML = `
+        <div class="portfolio-grid">
+            ${highlights.map(renderHighlightCard).join('')}
+        </div>`;
 
     document.getElementById('projects-container').innerHTML = `
         <div class="portfolio-grid">

@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balancing Through Data — Martín Rodríguez</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/6f58c6ab29.js" crossorigin="anonymous"></script>
+    <style>
+        .chart-wrap {
+            margin: 1.25rem 0 2rem;
+        }
+        .chart-wrap svg {
+            width: 100%;
+            height: auto;
+            overflow: visible;
+            display: block;
+        }
+        .chart-legend {
+            display: flex;
+            gap: 1.25rem;
+            flex-wrap: wrap;
+            margin-top: 0.6rem;
+        }
+        .chart-legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.7rem;
+            color: var(--color-light-gray);
+            opacity: 0.75;
+        }
+        .chart-legend-swatch {
+            width: 10px;
+            height: 10px;
+            border-radius: 2px;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <nav>
+            <input type="checkbox" id="menu-toggle" hidden>
+            <label for="menu-toggle" class="fa-solid fa-bars open-icon"></label>
+            <label for="menu-toggle" class="fa-solid fa-xmark close-icon"></label>
+            <a href="index.html#highlights" class="hl-back-btn">
+                <i class="fa-solid fa-arrow-left"></i> Back
+            </a>
+            <div class="title-container">
+                <h2>Martín Rodríguez</h2>
+                <p>Game Designer</p>
+            </div>
+            <ul id="sidemenu"></ul>
+        </nav>
+    </header>
+
+    <div class="highlight-hero">
+        <img src="images/combat_grab.png" alt="Balancing Through Data">
+        <div class="highlight-hero-overlay">
+            <span class="highlight-tag">Live Operations · Systems Design</span>
+            <h1>Balancing Through Data </h1>
+        </div>
+    </div>
+
+    <div class="highlight-body">
+
+        <section class="highlight-section">
+            <p class="highlight-section-label">Context</p>
+            <h2></h2>
+            <p>Our DND island offered players three routes to reach the final boss fight: easy, medium, and hard. Tougher route, higher reward. We had a simple system tying room and route difficulty to coins-per-enemy and type of biome.</p>
+        </section>
+
+        <section class="highlight-section">
+            <p class="highlight-section-label">Problem</p>
+            <h2></h2>
+            <p>The original system worked to deliver the rewards we wanted for player progression. However, as we expanded our enemy selection and included minibosses, we needed better balancing tools for the whole experience. Additionally, we had delivered encounters that players identified as frustrating and unrewarding.</p>
+        </section>
+
+        <section class="highlight-section">
+            <p class="highlight-section-label">Goal</p>
+            <h2></h2>
+            <p>Creating a new basis for our game's balance so we could tweak rooms with data, not guts, and increase player retention.</p>
+        </section>
+
+        <section class="highlight-section">
+            <p class="highlight-section-label">Solution</p>
+            <h2></h2>
+            <p>The solution was multifaceted and required me to approach the problem both from systems and level design.</p>
+
+            <p>Alongside our Product Manager Jorge Castaño and User Researcher Nicolás Perez we reviewed game analytics and player feedback. We identified the rooms players found unfair: rooms with high death and quit ratios.</p>
+
+            <p>Some rooms had a bad combination of layout and enemy weapons: Explosive weapons in Fortnite are powerful and can damage players behind cover. Layouts that limited cover rotation options or had strong enemy highground positions put players at a big disadvantage. Other rooms were too crowded. In some parts of the map, the challenge hike between rooms was too steep and poorly communicated.</p>
+
+            <p>This prompted me to review level design elements that impacted difficulty: room layouts, exit signposting, enemy positions, and cover. I highlighted rooms that needed fixes and drafted actionables.</p>
+
+            <p>At the same time I had discussions with my Design Lead César Solis to understand how we wanted to tie room difficulty and the economy together and started working on some formulas. I calculated each enemies' individual Threat Value and then each room's.</p>
+
+            <div class="highlight-table-wrap">
+                <table class="highlight-table">
+                    <thead>
+                        <tr><th>Variable</th><th>Formula</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Defensive Threat Coefficient</td><td class="dc-col">(Total Health / 1000) ^ Defensive Exponent</td></tr>
+                        <tr><td>Offensive Threat Coefficient</td><td class="dc-col">DPS × Accuracy Value × Weapon Type / Enemy Max DPS</td></tr>
+                        <tr><td>Individual Threat</td><td class="dc-col">Defensive Coefficient × Offensive Coefficient</td></tr>
+                        <tr><td>Group Threat</td><td class="dc-col">LOG10((Threat × 10) × (Enemies in Room ^ Crowd Exponent)) + 1</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p>Graphing both Room Difficulty and gold-per-enemy values empowered us to clearly see the relationship between difficulty and reward and better understand why players were complaining. We identified priorities, strategies, and a roadmap that would quickly address player feedback.</p>
+
+            <ul>
+                <li>Adjusting enemy health, number, and weapon selection</li>
+                <li>Adjusting enemy rewards</li>
+                <li>Adjusted problematic enemy spawn locations and timing</li>
+                <li>Increased cover and adjusted navigation in some rooms</li>
+                <li>Added sign posting that indicated increased challenge in exits that took players from one route to another</li>
+                <li>Improved clarity of one-way and alternative room exits</li>
+            </ul>
+
+            <p class="highlight-note">The charts below show the Room Difficulty (DC) and Coin Reward distribution across each route after the formulas were applied. Spikes reflect minibosses.</p>
+
+            <p class="highlight-table-label">Easy Route — Forest</p>
+            <div class="chart-wrap" id="chart-easy"></div>
+
+            <p class="highlight-table-label">Medium Route — Mountain</p>
+            <div class="chart-wrap" id="chart-medium"></div>
+
+            <p class="highlight-table-label">Hard Route — Mines</p>
+            <div class="chart-wrap" id="chart-hard"></div>
+
+            <div class="chart-legend">
+                <span class="chart-legend-item"><span class="chart-legend-swatch" style="background:rgb(34,211,238)"></span>DC 1 — Easy</span>
+                <span class="chart-legend-item"><span class="chart-legend-swatch" style="background:rgb(168,85,247)"></span>DC 3 — Medium</span>
+                <span class="chart-legend-item"><span class="chart-legend-swatch" style="background:rgb(239,68,68)"></span>DC 5 — Hard</span>
+                <span class="chart-legend-item"><span class="chart-legend-swatch" style="background:#f5c842; border-radius:50%"></span>Coins per room</span>
+            </div>
+        </section>
+
+        <section class="highlight-section">
+            <p class="highlight-section-label">Result</p>
+            <h2></h2>
+            <p>First, we now had a tool that at a glance helped us understand our games' difficulty and encounter progression. This also empowered our capacity to tweak difficulty when needed.</p>
+
+            <p>But more importantly, the changes had a big impact on player retention and difficulty perception.</p>
+
+            <div class="chart-wrap" id="chart-retention"></div>
+
+            <p class="highlight-note">Retention and difficulty perception measured across the full live period (Jan 16 – Mar 27, 2026).</p>
+
+            <div class="chart-wrap" id="chart-weekly"></div>
+            <div class="chart-legend">
+                <span class="chart-legend-item"><span class="chart-legend-swatch" style="background:#5ba4f5"></span>Day 1 Retention</span>
+                <span class="chart-legend-item"><span class="chart-legend-swatch" style="background:#a8d4ff"></span>Day 7 Retention</span>
+                <span class="chart-legend-item"><span class="chart-legend-swatch" style="background:#f57c5b; border-radius:50%"></span>% Too Difficult</span>
+            </div>
+            <p class="highlight-note">Weekly averages across 6 weeks post-update. As the "too difficult" rate falls, both Day 1 and Day 7 retention climb — peaking in Week 6 as difficulty complaints hit their lowest point.</p>
+        </section>
+
+    </div>
+
+
+    <script>
+    // ── Chart renderer ────────────────────────────────────────────────────────
+
+    const DC_MIN = 1, DC_MAX = 5;
+    const COIN_COLOR = '#f5c842';
+
+    // Maps DC 1–5 to a green→yellow→red gradient
+    function dcColor(dc) {
+        const t = Math.min(1, Math.max(0, (dc - DC_MIN) / (DC_MAX - DC_MIN)));
+        const stops = [
+            [ 34, 211, 238],  // cyan   (DC 1)
+            [168,  85, 247],  // purple (DC 3)
+            [239,  68,  68],  // red    (DC 5)
+        ];
+        const seg = t < 0.5 ? 0 : 1;
+        const lt = seg === 0 ? t / 0.5 : (t - 0.5) / 0.5;
+        const [r1, g1, b1] = stops[seg];
+        const [r2, g2, b2] = stops[seg + 1];
+        const r = Math.round(r1 + (r2 - r1) * lt);
+        const g = Math.round(g1 + (g2 - g1) * lt);
+        const b = Math.round(b1 + (b2 - b1) * lt);
+        return `rgb(${r},${g},${b})`;
+    }
+
+    function drawDCChart(containerId, rooms) {
+        const container = document.getElementById(containerId);
+        if (!container) return;
+
+        const W = 640, H = 220;
+        const mL = 36, mR = 52, mT = 18, mB = 48;
+        const chartW = W - mL - mR;
+        const chartH = H - mT - mB;
+        const barW = Math.max(8, Math.floor(chartW / rooms.length) - 3);
+        const slotW = chartW / rooms.length;
+
+        // Left axis: DC
+        const dcScale = v => chartH - ((v - DC_MIN) / (DC_MAX - DC_MIN)) * chartH;
+
+        // Right axis: Coins — scale to max coin value
+        const maxCoins = Math.max(...rooms.map(r => r.coins));
+        const coinScale = v => chartH - (v / maxCoins) * chartH;
+        const coinToK = v => v >= 1000 ? `$${(v/1000).toFixed(0)}k` : `$${v}`;
+
+        // DC reference lines
+        let refHTML = [2, 3, 4].map(v => {
+            const y = mT + dcScale(v);
+            return `<line x1="${mL}" y1="${y}" x2="${W - mR}" y2="${y}"
+                stroke="rgba(255,255,255,0.07)" stroke-dasharray="4,4" stroke-width="1"/>
+                <text x="${mL - 4}" y="${y + 4}" text-anchor="end"
+                font-size="9" fill="rgba(197,198,199,0.4)">${v}</text>`;
+        }).join('');
+        refHTML += `<text x="${mL - 4}" y="${mT + 4}" text-anchor="end" font-size="9" fill="rgba(197,198,199,0.4)">5</text>`;
+
+        // Right axis: coin tick labels
+        const coinTicks = [0, 0.25, 0.5, 0.75, 1.0].map(pct => Math.round(maxCoins * pct));
+        let rightAxisHTML = coinTicks.map(v => {
+            const y = mT + coinScale(v);
+            return `<text x="${W - mR + 4}" y="${y + 4}" font-size="9" fill="rgba(245,200,66,0.45)" text-anchor="start">${coinToK(v)}</text>`;
+        }).join('');
+        rightAxisHTML += `<line x1="${W - mR}" y1="${mT}" x2="${W - mR}" y2="${mT + chartH}" stroke="rgba(245,200,66,0.15)" stroke-width="1"/>`;
+
+        // DC bars
+        let barsHTML = rooms.map((r, i) => {
+            const x = mL + i * slotW + (slotW - barW) / 2;
+            const bH = ((r.dc - DC_MIN) / (DC_MAX - DC_MIN)) * chartH;
+            const y = mT + chartH - bH;
+            const color = dcColor(r.dc);
+            const label = r.id.split('_').slice(1).join('_');
+            return `
+                <rect x="${x}" y="${y}" width="${barW}" height="${bH}"
+                    fill="${color}" rx="2" opacity="0.75"/>
+                <text x="${x + barW/2}" y="${mT + chartH + 14}" text-anchor="middle"
+                    font-size="7.5" fill="rgba(197,198,199,0.4)"
+                    transform="rotate(-45,${x + barW/2},${mT + chartH + 14})">${label}</text>
+                <title>${r.id}: DC ${r.dc}, Coins ${coinToK(r.coins)}</title>`;
+        }).join('');
+
+        // Coin line + dots
+        const points = rooms.map((r, i) => {
+            const cx = mL + i * slotW + slotW / 2;
+            const cy = mT + coinScale(r.coins);
+            return `${cx},${cy}`;
+        });
+        const lineHTML = `<polyline points="${points.join(' ')}"
+            fill="none" stroke="${COIN_COLOR}" stroke-width="1.5" opacity="0.7" stroke-linejoin="round"/>`;
+        const dotsHTML = rooms.map((r, i) => {
+            const cx = mL + i * slotW + slotW / 2;
+            const cy = mT + coinScale(r.coins);
+            return `<circle cx="${cx}" cy="${cy}" r="3" fill="${COIN_COLOR}" opacity="0.9">
+                <title>${r.id}: ${coinToK(r.coins)}</title></circle>`;
+        }).join('');
+
+        // Zone separators
+        let sepHTML = '';
+        let prev = rooms[0].zone;
+        rooms.forEach((r, i) => {
+            if (r.zone !== prev) {
+                const x = mL + i * slotW;
+                sepHTML += `<line x1="${x}" y1="${mT}" x2="${x}" y2="${mT + chartH}"
+                    stroke="rgba(255,255,255,0.1)" stroke-dasharray="3,3" stroke-width="1"/>
+                    <text x="${x + 3}" y="${mT + 10}" font-size="8" fill="rgba(197,198,199,0.3)">Zone ${r.zone}</text>`;
+                prev = r.zone;
+            }
+        });
+        sepHTML += `<text x="${mL + 3}" y="${mT + 10}" font-size="8" fill="rgba(197,198,199,0.3)">Zone A</text>`;
+
+        // Axis labels
+        const axisLabels = `
+            <text x="${mL - 4}" y="${mT - 5}" text-anchor="end" font-size="8" fill="rgba(197,198,199,0.4)">DC</text>
+            <text x="${W - mR + 4}" y="${mT - 5}" font-size="8" fill="rgba(245,200,66,0.4)" text-anchor="start">Coins</text>`;
+
+        container.innerHTML = `<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg">
+            <line x1="${mL}" y1="${mT}" x2="${mL}" y2="${mT + chartH}" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+            <line x1="${mL}" y1="${mT + chartH}" x2="${W - mR}" y2="${mT + chartH}" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+            ${refHTML}
+            ${rightAxisHTML}
+            ${sepHTML}
+            ${barsHTML}
+            ${lineHTML}
+            ${dotsHTML}
+            ${axisLabels}
+        </svg>`;
+    }
+
+    function drawRetentionChart(containerId) {
+        const container = document.getElementById(containerId);
+        if (!container) return;
+
+        const W = 640, H = 220;
+        const mL = 46, mR = 20, mT = 20, mB = 40;
+        const chartW = W - mL - mR;
+        const chartH = H - mT - mB;
+
+        // Data: grouped bars — Day 1 and Day 7, before/after
+        const groups = [
+            { label: 'Day 1 Retention', before: 19.0, after: 37.3 },
+            { label: 'Day 7 Retention', before: 4.4,  after: 23.4 },
+        ];
+
+        const maxVal = 45;
+        const yScale = v => chartH - (v / maxVal) * chartH;
+        const groupW = chartW / groups.length;
+        const barW = groupW * 0.28;
+        const gap = groupW * 0.06;
+
+        let refHTML = [10, 20, 30, 40].map(v => {
+            const y = mT + yScale(v);
+            return `<line x1="${mL}" y1="${y}" x2="${W - mR}" y2="${y}"
+                stroke="rgba(255,255,255,0.07)" stroke-dasharray="4,4" stroke-width="1"/>
+                <text x="${mL - 6}" y="${y + 4}" text-anchor="end"
+                font-size="9" fill="rgba(197,198,199,0.45)">${v}%</text>`;
+        }).join('');
+
+        let barsHTML = groups.map((g, i) => {
+            const cx = mL + i * groupW + groupW / 2;
+            const xBefore = cx - barW - gap / 2;
+            const xAfter  = cx + gap / 2;
+
+            const hBefore = (g.before / maxVal) * chartH;
+            const hAfter  = (g.after  / maxVal) * chartH;
+            const yBefore = mT + chartH - hBefore;
+            const yAfter  = mT + chartH - hAfter;
+
+            return `
+                <!-- before bar -->
+                <rect x="${xBefore}" y="${yBefore}" width="${barW}" height="${hBefore}"
+                    fill="#3a6fa8" rx="2" opacity="0.6"/>
+                <text x="${xBefore + barW/2}" y="${yBefore - 5}" text-anchor="middle"
+                    font-size="9" fill="rgba(197,198,199,0.55)">${g.before}%</text>
+
+                <!-- after bar -->
+                <rect x="${xAfter}" y="${yAfter}" width="${barW}" height="${hAfter}"
+                    fill="#5ba4f5" rx="2" opacity="0.95"/>
+                <text x="${xAfter + barW/2}" y="${yAfter - 5}" text-anchor="middle"
+                    font-size="10" font-weight="700" fill="#5ba4f5">${g.after}%</text>
+
+                <!-- group label -->
+                <text x="${cx}" y="${mT + chartH + 18}" text-anchor="middle"
+                    font-size="10" fill="rgba(197,198,199,0.7)">${g.label}</text>
+
+                <!-- arrow -->
+                <text x="${cx}" y="${mT + chartH + 32}" text-anchor="middle"
+                    font-size="9" fill="#5ba4f5">↑ ${(g.after - g.before).toFixed(1)} pp</text>`;
+        }).join('');
+
+        // Legend
+        const legendY = mT + 4;
+        const legendX = W - mR - 160;
+        const legendHTML = `
+            <rect x="${legendX}" y="${legendY}" width="10" height="10" fill="#3a6fa8" rx="2" opacity="0.6"/>
+            <text x="${legendX + 14}" y="${legendY + 9}" font-size="9" fill="rgba(197,198,199,0.6)">Before Jan 22</text>
+            <rect x="${legendX + 90}" y="${legendY}" width="10" height="10" fill="#5ba4f5" rx="2"/>
+            <text x="${legendX + 104}" y="${legendY + 9}" font-size="9" fill="rgba(197,198,199,0.6)">After Jan 22</text>`;
+
+        container.innerHTML = `<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg">
+            <line x1="${mL}" y1="${mT}" x2="${mL}" y2="${mT + chartH}" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+            <line x1="${mL}" y1="${mT + chartH}" x2="${W - mR}" y2="${mT + chartH}" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+            ${refHTML}
+            ${barsHTML}
+            ${legendHTML}
+        </svg>`;
+    }
+
+    // ── Data ──────────────────────────────────────────────────────────────────
+
+    drawDCChart('chart-easy', [
+        { id:'M01_F01', dc:2.15, coins:1040,  zone:'A' }, { id:'M01_F02', dc:2.80, coins:2300,  zone:'A' },
+        { id:'M01_F03', dc:2.73, coins:1980,  zone:'A' }, { id:'M02_F05', dc:2.38, coins:1680,  zone:'A' },
+        { id:'M02_F06', dc:2.93, coins:2800,  zone:'A' }, { id:'M02_F09', dc:3.51, coins:5860,  zone:'A' },
+        { id:'M02_F10', dc:3.10, coins:2980,  zone:'A' }, { id:'M05_F01', dc:3.44, coins:3400,  zone:'B' },
+        { id:'M05_F03', dc:3.52, coins:4160,  zone:'B' }, { id:'M05_F04', dc:3.87, coins:5840,  zone:'B' },
+        { id:'M05_F05', dc:3.83, coins:4560,  zone:'B' }, { id:'M05_F08', dc:4.34, coins:10460, zone:'B' },
+    ]);
+
+    drawDCChart('chart-medium', [
+        { id:'M01_F01', dc:2.15, coins:1040,  zone:'A' }, { id:'M01_F02', dc:2.80, coins:2300,  zone:'A' },
+        { id:'M01_F04', dc:3.12, coins:4260,  zone:'A' }, { id:'M03_M01', dc:3.27, coins:5640,  zone:'A' },
+        { id:'M03_M02', dc:3.07, coins:4500,  zone:'A' }, { id:'M03_M03', dc:3.77, coins:8320,  zone:'A' },
+        { id:'M03_M06', dc:3.71, coins:8580,  zone:'A' }, { id:'M03_M07', dc:3.90, coins:9120,  zone:'A' },
+        { id:'M06_M01', dc:4.02, coins:9500,  zone:'B' }, { id:'M06_M04', dc:4.00, coins:9540,  zone:'B' },
+        { id:'M06_M05', dc:4.03, coins:10160, zone:'B' }, { id:'M06_M07', dc:4.33, coins:13300, zone:'B' },
+        { id:'M06_M08', dc:4.32, coins:12400, zone:'B' },
+    ]);
+
+    drawDCChart('chart-hard', [
+        { id:'M01_F01', dc:2.15, coins:1040,  zone:'A' }, { id:'M01_F02', dc:2.80, coins:2300,  zone:'A' },
+        { id:'M04_U02', dc:3.82, coins:15760, zone:'A' }, { id:'M07_U01', dc:4.09, coins:20520, zone:'B' },
+        { id:'M07_U02', dc:4.30, coins:25080, zone:'B' }, { id:'M07_U03', dc:4.30, coins:25520, zone:'B' },
+        { id:'M07_U08', dc:4.46, coins:21880, zone:'B' }, { id:'M08_D04', dc:4.56, coins:30480, zone:'C' },
+        { id:'M08_D06', dc:4.87, coins:32840, zone:'C' },
+    ]);
+
+    drawRetentionChart('chart-retention');
+
+    function drawWeeklyChart(containerId) {
+        const container = document.getElementById(containerId);
+        if (!container) return;
+
+        const weeks = [
+            { label: 'W1\nJan 16–22', day1: 22.74, day7: 9.45,  hard: 28.57 },
+            { label: 'W2\nJan 23–29', day1: 25.69, day7: 12.36, hard: 27.78 },
+            { label: 'W3\nJan 30–\nFeb 5',  day1: 27.74, day7: 12.95, hard: 22.50 },
+            { label: 'W4\nFeb 6–12', day1: 26.78, day7: 11.90, hard: 22.50 },
+            { label: 'W5\nFeb 13–19',day1: 32.55, day7: 17.34, hard: 22.22 },
+            { label: 'W6\nFeb 20–26',day1: 33.37, day7: 19.54, hard: 11.11 },
+        ];
+
+        const W = 640, H = 260;
+        const mL = 44, mR = 20, mT = 24, mB = 52;
+        const chartW = W - mL - mR;
+        const chartH = H - mT - mB;
+        const n = weeks.length;
+        const slotW = chartW / (n - 1);
+
+        // Shared 0–40% scale for all three series
+        const maxVal = 40;
+        const yS = v => mT + chartH - (v / maxVal) * chartH;
+        const xS = i => mL + i * slotW;
+
+        // Gridlines
+        let gridHTML = [10, 20, 30, 40].map(v => {
+            const y = yS(v);
+            return `<line x1="${mL}" y1="${y}" x2="${W - mR}" y2="${y}"
+                stroke="rgba(255,255,255,0.07)" stroke-dasharray="4,4" stroke-width="1"/>
+                <text x="${mL - 6}" y="${y + 4}" text-anchor="end" font-size="9" fill="rgba(197,198,199,0.4)">${v}%</text>`;
+        }).join('');
+
+        // Update marker (between W1 and W2)
+        const markerX = xS(0) + slotW / 2;
+        const markerHTML = `
+            <line x1="${markerX}" y1="${mT}" x2="${markerX}" y2="${mT + chartH}"
+                stroke="rgba(255,255,255,0.2)" stroke-dasharray="5,3" stroke-width="1"/>
+            <text x="${markerX + 4}" y="${mT + 10}" font-size="8" fill="rgba(255,255,255,0.35)">Jan 22 update</text>`;
+
+        // Build polylines
+        const polyline = (getter, color) => {
+            const pts = weeks.map((w, i) => `${xS(i)},${yS(getter(w))}`).join(' ');
+            return `<polyline points="${pts}" fill="none" stroke="${color}" stroke-width="2" opacity="0.85" stroke-linejoin="round"/>`;
+        };
+        const dots = (getter, color) => weeks.map((w, i) => {
+            const v = getter(w);
+            return `<circle cx="${xS(i)}" cy="${yS(v)}" r="4" fill="${color}" stroke="rgba(8,12,20,0.8)" stroke-width="1.5">
+                <title>${w.label.replace(/\n/g,' ')}: ${v}%</title></circle>
+                <text x="${xS(i)}" y="${yS(v) - 8}" text-anchor="middle" font-size="8.5" font-weight="700" fill="${color}">${v}%</text>`;
+        }).join('');
+
+        // X labels (week labels, two lines)
+        const xLabels = weeks.map((w, i) => {
+            const lines = w.label.split('\n');
+            const linesHTML = lines.map((l, j) =>
+                `<text x="${xS(i)}" y="${mT + chartH + 16 + j * 12}" text-anchor="middle" font-size="8.5" fill="rgba(197,198,199,0.55)">${l}</text>`
+            ).join('');
+            return linesHTML;
+        }).join('');
+
+        container.innerHTML = `<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg">
+            <line x1="${mL}" y1="${mT}" x2="${mL}" y2="${mT + chartH}" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+            <line x1="${mL}" y1="${mT + chartH}" x2="${W - mR}" y2="${mT + chartH}" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+            ${gridHTML}
+            ${markerHTML}
+            ${polyline(w => w.hard,  '#f57c5b')}
+            ${polyline(w => w.day1,  '#5ba4f5')}
+            ${polyline(w => w.day7,  '#a8d4ff')}
+            ${dots(w => w.hard,  '#f57c5b')}
+            ${dots(w => w.day1,  '#5ba4f5')}
+            ${dots(w => w.day7,  '#a8d4ff')}
+            ${xLabels}
+        </svg>`;
+    }
+
+    drawWeeklyChart('chart-weekly');
+    </script>
+
+</body>
+</html>

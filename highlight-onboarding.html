@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solving Wayfinding Issues — Martín Rodríguez</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/6f58c6ab29.js" crossorigin="anonymous"></script>
+    <style>
+        .hl-carousel {
+            position: relative;
+            margin: 1.5rem 0 0.5rem;
+            overflow: hidden;
+            border-radius: 6px;
+        }
+        .hl-carousel-track {
+            display: flex;
+            transition: transform 0.4s ease;
+        }
+        .hl-carousel-slide {
+            min-width: 100%;
+        }
+        .hl-carousel-slide img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+            max-height: 480px;
+            border-radius: 6px;
+        }
+        .hl-carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(8,12,20,0.6);
+            border: 1px solid rgba(255,255,255,0.15);
+            color: var(--color-light-gray);
+            font-size: 1.8rem;
+            line-height: 1;
+            width: 2.2rem;
+            height: 2.2rem;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+        .hl-carousel-btn:hover {
+            background: rgba(91,164,245,0.25);
+        }
+        .hl-carousel-prev { left: 0.6rem; }
+        .hl-carousel-next { right: 0.6rem; }
+        .hl-carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 0.4rem;
+            margin-top: 0.6rem;
+        }
+        .hl-carousel-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: rgba(197,198,199,0.3);
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .hl-carousel-dot.active {
+            background: var(--color-light-teal);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <nav>
+            <input type="checkbox" id="menu-toggle" hidden>
+            <label for="menu-toggle" class="fa-solid fa-bars open-icon"></label>
+            <label for="menu-toggle" class="fa-solid fa-xmark close-icon"></label>
+            <a href="index.html#highlights" class="hl-back-btn">
+                <i class="fa-solid fa-arrow-left"></i> Back
+            </a>
+            <div class="title-container">
+                <h2>Martín Rodríguez</h2>
+                <p>Game Designer</p>
+            </div>
+            <ul id="sidemenu"></ul>
+        </nav>
+    </header>
+
+    <div class="highlight-hero">
+        <img src="images/TWDU_CY_FinalMap.png" alt="Designing Onboarding Through Space">
+        <div class="highlight-hero-overlay">
+            <span class="highlight-tag">Level Design</span>
+            <h1>Solving Wayfinding Issues</h1>
+        </div>
+    </div>
+
+    <div class="highlight-body">
+        <section class="highlight-section">
+            <p class="highlight-section-label">Context</p>
+            <h2></h2>
+            <p>For The Walking Dead experience, I had designed an interconnected map that had 3 mirrored team areas. Each team had to go through a PvE section before reaching the PvPvE arenas where the king-of-the hill dynamics happened. I wanted a mix of claustrophobic spaces to spotlight the zombies and bigger arenas that supported PvE fighting.</p>
+        </section>
+        <section class="highlight-section">
+            <p class="highlight-section-label">Problem</p>
+            <h2></h2>
+            <p>The dark and grimy aesthetic of the assets, paired with an objective that changed locations from above ground to underground and back made navigation confusing for players. Internal playtesters were getting disoriented and had trouble keeping up with the king-of-the-hill. The mirrored nature of the map also confused players as to where their team bases were located once in the main arenas.</p>
+        </section>
+        <section class="highlight-section">
+            <p class="highlight-section-label">Goal</p>
+            <h2></h2>
+            <p>Add signposting and HUD information to help players find their way through the prison map.</p>
+        </section>
+        <section class="highlight-section">
+            <p class="highlight-section-label">Solution</p>
+            <h2></h2>
+            <p>There were several fronts I had to tackle. First I went over the playtest reports and identified the most critical areas where players got lost. I followed by walking the level and getting a wayfinding understanding of what the problems could be. Disorientation mainly happened because decoration was too busy, pathing was not clear, and lighting was not being used to direct player attention.</p>
+            <p>Knowing just an art and light pass was not enough, I reviewed competitive shooters like CS:GO, Valorant, Apex Legends and Epic's own Ballistic game mode to bring over some additional good practices. I then consulted with our UI/UX lead Andrés Pisso to get his take on what HUD elements would best help players find their way.</p>
+            <p>With all the information in hand I made a plan and coordinated meetings to present to stakeholders and other project area leads to get buy-in and feedback. Coordinated the plan with production, checking for dependencies and got started:</p>
+            <ul>
+                <li>Collaborated with environmental to add team colours to structures, clear pathing, and use light to direct player attention to exists.</li>
+                <li>Added graffiti decals to signpost exits, areas, and directionality.</li>
+                <li>Created a system that turned some decals on or off depending on where the capture area was located.</li>
+                <li>Added HUD beacons that clamped to screen to mark each capture area when active</li>
+                <li>Added HUD objective messages.</li>
+                <li>Added notifications for important state changes that needed player attention.</li>
+            </ul>
+        </section>
+        <section class="highlight-section">
+            <p class="highlight-section-label">Result</p>
+            <h2></h2>
+            <p>I delivered a map with tools that directed navigation diegetically and non-diegetically. Through playtesting and launch, we did not receive complaints or issues regarding wayfinding or objective clarity.</p>
+
+            <div class="hl-carousel">
+                <div class="hl-carousel-track" id="hl-carousel-track">
+                    <div class="hl-carousel-slide"><img src="images/TWDU_CY_Wayfinding1.png" alt="Wayfinding overview"></div>
+                    <div class="hl-carousel-slide"><img src="images/TWDU_CY_Wayfinding2.png" alt="Wayfinding detail"></div>
+                    <div class="hl-carousel-slide"><img src="highlights/twd_lvldesign_images/ScreenShot00002.png" alt="Final layout result"></div>
+                    <div class="hl-carousel-slide"><img src="highlights/twd_lvldesign_images/ScreenShot00003.png" alt="Final layout result"></div>
+                    <div class="hl-carousel-slide"><img src="highlights/twd_lvldesign_images/ScreenShot00006.png" alt="Final layout result"></div>
+                    <div class="hl-carousel-slide"><img src="highlights/twd_lvldesign_images/beacon_a.png" alt="Final layout result"></div>
+                    <div class="hl-carousel-slide"><img src="highlights/twd_lvldesign_images/beacon_b.png" alt="Final layout result"></div>
+                </div>
+                <button class="hl-carousel-btn hl-carousel-prev" aria-label="Previous">&#8249;</button>
+                <button class="hl-carousel-btn hl-carousel-next" aria-label="Next">&#8250;</button>
+                <div class="hl-carousel-dots" id="hl-carousel-dots"></div>
+            </div>
+        </section>
+    </div>
+
+
+    <script>
+    (function () {
+        const track = document.getElementById('hl-carousel-track');
+        const slides = track.querySelectorAll('.hl-carousel-slide');
+        const dotsContainer = document.getElementById('hl-carousel-dots');
+        let current = 0;
+
+        slides.forEach((_, i) => {
+            const dot = document.createElement('span');
+            dot.className = 'hl-carousel-dot' + (i === 0 ? ' active' : '');
+            dot.addEventListener('click', () => goTo(i));
+            dotsContainer.appendChild(dot);
+        });
+
+        function goTo(index) {
+            current = (index + slides.length) % slides.length;
+            track.style.transform = `translateX(-${current * 100}%)`;
+            dotsContainer.querySelectorAll('.hl-carousel-dot').forEach((d, i) =>
+                d.classList.toggle('active', i === current));
+        }
+
+        document.querySelector('.hl-carousel-prev').addEventListener('click', () => goTo(current - 1));
+        document.querySelector('.hl-carousel-next').addEventListener('click', () => goTo(current + 1));
+    })();
+    </script>
+</body>
+</html>

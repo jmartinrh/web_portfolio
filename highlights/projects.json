@@ -11,11 +11,11 @@
             "Designed a multiphase boss encounter and custom enemies.",
             "Designed and implemented core gameplay, progression systems, reward systems, and metagame loops.",
             "Designed and implemented room encounters and events.",
-            "Devised balance formulas that used hit-to-kill as the lynchpin of encounters and game progression.",
+            "Devised formulas that calculated room threat to balance encounters and game progression.",
             "Built and implemented 50+ rooms and polished wayfinding flows to support gameplay, tone, and pacing.",
             "Diagnosed retention and satisfaction gaps through live analytics."
         ],
-        "thumbnail": null,
+        "thumbnail": "images/DND_landscape_comp.jpeg",
         "media": { "type": "video", "src": "video/DND_Trailer.mp4" },
         "challengeParagraphs": [
             "Creating a legible and navigable interconnected map while avoiding softlocks.",
@@ -67,7 +67,7 @@
             "Designed player 'boons' and upgrades.",
             "Designed and implemented enemy encounters and level layouts."
         ],
-        "thumbnail": null,
+        "thumbnail": "images/null_core_title.png",
         "media": { "type": "video", "src": "video/NullCore.mp4" },
         "challengeParagraphs": [
             "Creating 'boons' and upgrades that can synergize across different playstyles."
@@ -88,7 +88,7 @@
             "Built and implemented level layouts and wayfinding flows to support gameplay, tone, and pacing.",
             "Diagnosed retention and satisfaction gaps through live analytics."
         ],
-        "thumbnail": "images/TWDU_CY_FinalMap.png",
+        "thumbnail": "images/twd_landscape_comp_s.jpeg",
         "media": { "type": "video", "src": "video/TWDU_CY_GameLoop.mp4" },
         "challengeParagraphs": [
             "Designing a dynamic enemy system that maintained challenge for 1 or 12 players in different game areas.",
@@ -159,7 +159,7 @@
             "Designed and implemented player's range abilities using BPs.",
             "Conducted playtesting and player surveying to refine controls and balance."
         ],
-        "thumbnail": "images/BossLab_gif01.gif",
+        "thumbnail": "images/ue_background.jpg",
         "media": {
             "type": "iframe",
             "src": "https://www.youtube.com/embed/7mQSr-oY2Xw?si=BgupRKAtNRcn7fdJ"
@@ -271,7 +271,7 @@
             "Developed combat system simulations to inform balancing decisions.",
             "Coordinated with other systems designers to balance player-led economy."
         ],
-        "thumbnail": "images/Runiverse_combat.webp",
+        "thumbnail": "images/work-3.png",
         "media": {
             "type": "iframe",
             "src": "https://www.youtube.com/embed/z1ALPAewJVU?si=UjblGnqBu5d3ZwKF"
