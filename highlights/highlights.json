@@ -3,14 +3,14 @@
         "id": "highlight-liveops",
         "tag": "Live Operations · Systems Design",
         "title": "Balancing Through Data",
-        "image": "images/dfa_closeup.png",
+        "image": "images/highlights/dfa_closeup.png",
         "link": "highlight-liveops.html"
     },
     {
         "id": "highlight-onboarding",
         "tag": "Level Design",
         "title": "Solving Wayfinding Issues",
-        "image": "images/TWDU_CY_Wayfinding1.png",
+        "image": "images/projects/twdu/TWDU_CY_Wayfinding1.png",
         "link": "highlight-onboarding.html"
     }
 ]

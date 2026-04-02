@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p images/site images/highlights images/projects/twdu images/projects/bosslab images/projects/species images/projects/sigma images/projects/runiverse images/projects/raccoon)",
+      "Bash(mv images/banner.jpg images/headshot.jpg images/ue_background.jpg 'images/Screenshot 2024-05-30 214630.png' 'images/Screenshot 2025-10-15 160631.png' images/work-1.png images/work-2.png images/work-3.png images/work-4.png images/work-7.png images/work-8.png images/work5.jpeg images/work6.png images/null_core_title.png images/retrostorm_logo.png images/forgotten_runiverse.png images/site/)",
+      "Bash(mv images/DND_landscape_comp.jpeg images/combat_grab.png images/dfa_closeup.png images/highlights/)",
+      "Bash(mv images/TWDU_CU_BasicLayout.jpg images/TWDU_CY_FinalMap.png images/TWDU_CY_GameFlow.jpg images/TWDU_CY_Greybox1.png images/TWDU_CY_Greybox2.png images/TWDU_CY_LevelProgression.gif images/TWDU_CY_RankingSystem.png images/TWDU_CY_Rarities.png images/TWDU_CY_RewardStore.png images/TWDU_CY_Rewards.png images/TWDU_CY_RewardsDiag.jpg images/TWDU_CY_Screenshot1.png images/TWDU_CY_Store1.png images/TWDU_CY_Store2.png images/TWDU_CY_WaveManagement.png images/TWDU_CY_Waves.gif images/TWDU_CY_Wayfinding1.png images/TWDU_CY_Wayfinding2.png images/TWDU_LayoutResult.png images/TWDU_Screenshot2.png images/twd_landscape_comp_s.jpeg images/projects/twdu/)",
+      "Bash(mv highlights/twd_lvldesign_images/* images/projects/twdu/)",
+      "Bash(sed -i 's|\"images/TWDU_|\"images/projects/twdu/TWDU_|g' highlights/projects.json)",
+      "Bash(sed -i 's|\"images/TWDU_CU_BasicLayout.jpg\"|\"images/projects/twdu/TWDU_CU_BasicLayout.jpg\"|g' highlights/projects.json)",
+      "Bash(sed -i 's|\"images/twd_landscape_comp_s.jpeg\"|\"images/projects/twdu/twd_landscape_comp_s.jpeg\"|g' highlights/projects.json)",
+      "Bash(sed -i 's|\"images/BossLab_|\"images/projects/bosslab/BossLab_|g; s|\"images/BossLabs_Gameflow|\"images/projects/bosslab/BossLabs_Gameflow|g; s|\"images/Bosslabgif|\"images/projects/bosslab/Bosslabgif|g' highlights/projects.json)",
+      "Bash(sed -i 's|\"images/Species|\"images/projects/species/Species|g' highlights/projects.json)",
+      "Bash(sed -i 's|src=\"images/combat_grab.png\"|src=\"images/highlights/combat_grab.png\"|g' highlight-liveops.html)",
+      "Bash(sed -i 's|src=\"images/TWDU_CY_FinalMap.png\"|src=\"images/projects/twdu/TWDU_CY_FinalMap.png\"|g; \\\\:*)",
+      "Bash(rm highlight-asymmetric.html highlight-roguelike.html)",
+      "Bash(sed -i 's|src=\"images/TWDU_CY_FinalMap.png\"|src=\"images/projects/twdu/TWDU_CY_FinalMap.png\"|g' highlight-onboarding.html)",
+      "Bash(sed -i 's|src=\"images/TWDU_CY_Wayfinding1.png\"|src=\"images/projects/twdu/TWDU_CY_Wayfinding1.png\"|g' highlight-onboarding.html)",
+      "Bash(sed -i 's|src=\"images/TWDU_CY_Wayfinding2.png\"|src=\"images/projects/twdu/TWDU_CY_Wayfinding2.png\"|g' highlight-onboarding.html)",
+      "Bash(sed -i 's|src=\"highlights/twd_lvldesign_images/|src=\"images/projects/twdu/|g' highlight-onboarding.html)",
+      "Bash(ls images/*.*)"
+    ]
+  }
+}

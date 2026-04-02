@@ -17,19 +17,19 @@ Creating a new basis for our game’s balance so we could tweak rooms with data,
 
 
 Solution
-The solution was multifaceted and required me to approach the problem both from systems and level design.
+The solution was multifaceted and required me to approach the problem from both a systems and level design perspective.
 
 
 Alongside our Product Manager Jorge Castaño and User Researcher Nicolás Perez we reviewed game analytics and player feedback. We identified the rooms players found unfair: rooms with high death and quit ratios. 
 
 
-Some rooms had a bad combination of layout and enemy weapons: Explosive weapons in Fortnite are powerful and can damage players behind cover. Layouts that limited cover rotation options or had strong enemy highground positions put players at a big disadvantage. Other rooms were too crowded. In some parts of the map, the challenge hike between rooms was too steep and poorly communicated.
+Some rooms had a bad combination of layout and enemy weapons: Explosive weapons in Fortnite are powerful and can damage players behind cover. Layouts that limited cover rotation options or had strong enemy highground positions put players at a big disadvantage. Other rooms were too crowded. In some parts of the map, the difficulty spike between rooms was too steep and poorly communicated.
 
 
-This prompted me to review level design elements that impacted difficulty: room layouts, exit signposting, enemy positions, and cover. I highlighted rooms that needed fixes and drafted actionables.
+This prompted me to review level design elements that impacted difficulty: room layouts, exit signposting, enemy positions, and cover. I highlighted rooms that needed fixes and drafted an action plan.
 
 
-At the same time I had discussions with my Design Lead César Solis to understand how we wanted to tie room difficulty and the economy together and started working on some formulas. I calculated each enemies’ individual Threat Value and then each room's.
+At the same time I had discussions with my Design Lead César Solis to understand how we wanted to tie room difficulty and the economy together and started working on some formulas. I calculated each enemy’s individual Threat Value and then each room’s.
 
 
 Defensive Threat Value
@@ -47,11 +47,11 @@ Defensive Threat Value
 Graphing both Room Difficulty and gold-per-enemy values empowered us to clearly see the relationship between difficulty and reward and better understand why players were complaining. We identified priorities, strategies, and a roadmap that would quickly address player feedback.
 
 
-* Adjusting enemy health, number, and weapon selection
-* Adjusting enemy rewards
+* Adjusted enemy health, number, and weapon selection
+* Adjusted enemy rewards
 * Adjusted problematic enemy spawn locations and timing
 * Increased cover and adjusted navigation in some rooms
-* Added sign posting that indicated increased challenge in exits that took players from one route to another
+* Added signposting that indicated increased challenge in exits that took players from one route to another
 * Improved clarity of one-way and alternative room exits
 
 
@@ -82,10 +82,10 @@ There were several fronts I had to tackle. First I went over the playtest report
 Knowing just an art and light pass was not enough, I reviewed competitive shooters like CS:GO, Valorant, Apex Legends and Epic’s own Ballistic game mode to bring over some additional good practices. I then consulted with our UI/UX lead Andrés Pisso to get his take on what HUD elements would best help players find their way.
 
 
-With all the information in hand I made a plan and coordinated meetings to present to stakeholders and other project area leads to get buy-in and feedback. Coordinated the plan with production, checking for dependencies and got started:
+With all the information in hand I made a plan and coordinated meetings to present to stakeholders and other project area leads to get buy-in and feedback. I coordinated the plan with production, checked for dependencies, and got started:
 
 
-* Collaborated with environmental to add team colours to structures, clear pathing, and use light to direct player attention to exists.
+* Collaborated with the environmental art team to add team colours to structures, clear pathing, and use light to direct player attention to exits.
 * Added graffiti decals to signpost exits, areas, and directionality.
 * Created a system that turned some decals on or off depending on where the capture area was located.
 * Added HUD beacons that clamped to screen to mark each capture area when active
@@ -94,7 +94,7 @@ With all the information in hand I made a plan and coordinated meetings to prese
 
 
 Result
-I delivered a map with tools that directed navigation diegetically and non-diegetically. Through playtesting and launch, we did not receive complaints or issues regarding wayfinding or objective clarity.
+I delivered a map with tools that directed navigation both through the environment itself (diegetically) and through HUD elements (non-diegetically). Through playtesting and launch, we did not receive complaints or issues regarding wayfinding or objective clarity.
 
 
 DND D20 system
@@ -109,7 +109,7 @@ Context
 
 
 Problem
-The game was playable by 1 to 12 players and the difficulty of the different areas had to adjust accordingly. UEFN NPC’s parameters cannot be edited live, so we had to come up with a different solution. Additionally, we couldn’t have more than 90 entities running simultaneously.
+The game was playable by 1 to 12 players and the difficulty of the different areas had to adjust accordingly. UEFN NPCs’ parameters cannot be edited live, so we had to come up with a different solution. Additionally, we couldn’t have more than 90 entities running simultaneously.
 
 
 Goal 

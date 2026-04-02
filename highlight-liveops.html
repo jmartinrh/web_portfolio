@@ -50,19 +50,18 @@
             <input type="checkbox" id="menu-toggle" hidden>
             <label for="menu-toggle" class="fa-solid fa-bars open-icon"></label>
             <label for="menu-toggle" class="fa-solid fa-xmark close-icon"></label>
-            <a href="index.html#highlights" class="hl-back-btn">
-                <i class="fa-solid fa-arrow-left"></i> Back
-            </a>
             <div class="title-container">
                 <h2>Martín Rodríguez</h2>
                 <p>Game Designer</p>
             </div>
-            <ul id="sidemenu"></ul>
+            <ul id="sidemenu">
+                <li><a href="index.html#highlights"><i class="fa-solid fa-arrow-left"></i> Back</a></li>
+            </ul>
         </nav>
     </header>
 
     <div class="highlight-hero">
-        <img src="images/combat_grab.png" alt="Balancing Through Data">
+        <img src="images/highlights/combat_grab.png" alt="Balancing Through Data">
         <div class="highlight-hero-overlay">
             <span class="highlight-tag">Live Operations · Systems Design</span>
             <h1>Balancing Through Data </h1>
@@ -74,7 +73,7 @@
         <section class="highlight-section">
             <p class="highlight-section-label">Context</p>
             <h2></h2>
-            <p>Our DND island offered players three routes to reach the final boss fight: easy, medium, and hard. Tougher route, higher reward. We had a simple system tying room and route difficulty to coins-per-enemy and type of biome.</p>
+            <p>Our D&D island offered players three routes to reach the final boss fight: easy, medium, and hard. Tougher route, higher reward. We had a simple system tying room and route difficulty to coins-per-enemy and type of biome.</p>
         </section>
 
         <section class="highlight-section">
@@ -86,21 +85,21 @@
         <section class="highlight-section">
             <p class="highlight-section-label">Goal</p>
             <h2></h2>
-            <p>Creating a new basis for our game's balance so we could tweak rooms with data, not guts, and increase player retention.</p>
+            <p>The goal was to create a new basis for our game's balance so we could tweak rooms with data, not guts, and increase player retention.</p>
         </section>
 
         <section class="highlight-section">
             <p class="highlight-section-label">Solution</p>
             <h2></h2>
-            <p>The solution was multifaceted and required me to approach the problem both from systems and level design.</p>
+            <p>The solution was multifaceted and required me to approach the problem from both a systems and level design perspective.</p>
 
-            <p>Alongside our Product Manager Jorge Castaño and User Researcher Nicolás Perez we reviewed game analytics and player feedback. We identified the rooms players found unfair: rooms with high death and quit ratios.</p>
+            <p>Alongside our Product Manager Jorge Castaño and User Researcher Nicolás Perez, we reviewed game analytics and player feedback. We identified the rooms players found unfair: rooms with high death and quit ratios.</p>
 
-            <p>Some rooms had a bad combination of layout and enemy weapons: Explosive weapons in Fortnite are powerful and can damage players behind cover. Layouts that limited cover rotation options or had strong enemy highground positions put players at a big disadvantage. Other rooms were too crowded. In some parts of the map, the challenge hike between rooms was too steep and poorly communicated.</p>
+            <p>Some rooms had a bad combination of layout and enemy weapons: Explosive weapons in Fortnite are powerful and can damage players behind cover. Layouts that limited cover rotation options or had strong enemy highground positions put players at a big disadvantage. Other rooms were too crowded. In some parts of the map, the difficulty spike between rooms was too steep and poorly communicated.</p>
 
-            <p>This prompted me to review level design elements that impacted difficulty: room layouts, exit signposting, enemy positions, and cover. I highlighted rooms that needed fixes and drafted actionables.</p>
+            <p>This prompted me to review level design elements that impacted difficulty: room layouts, exit signposting, enemy positions, and cover. I highlighted rooms that needed fixes and drafted an action plan.</p>
 
-            <p>At the same time I had discussions with my Design Lead César Solis to understand how we wanted to tie room difficulty and the economy together and started working on some formulas. I calculated each enemies' individual Threat Value and then each room's.</p>
+            <p>At the same time I had discussions with my Design Lead César Solis to understand how we wanted to tie room difficulty and the economy together and started working on some formulas. I calculated each enemy's individual Threat Value and then each room's.</p>
 
             <div class="highlight-table-wrap">
                 <table class="highlight-table">
@@ -108,10 +107,10 @@
                         <tr><th>Variable</th><th>Formula</th></tr>
                     </thead>
                     <tbody>
-                        <tr><td>Defensive Threat Coefficient</td><td class="dc-col">(Total Health / 1000) ^ Defensive Exponent</td></tr>
-                        <tr><td>Offensive Threat Coefficient</td><td class="dc-col">DPS × Accuracy Value × Weapon Type / Enemy Max DPS</td></tr>
-                        <tr><td>Individual Threat</td><td class="dc-col">Defensive Coefficient × Offensive Coefficient</td></tr>
-                        <tr><td>Group Threat</td><td class="dc-col">LOG10((Threat × 10) × (Enemies in Room ^ Crowd Exponent)) + 1</td></tr>
+                        <tr><td>Defensive Threat</td><td class="dc-col">(Total Health / 1000) ^ Defensive Coefficient</td></tr>
+                        <tr><td>Offensive Threat</td><td class="dc-col">DPS × Accuracy Value × Weapon Type / Enemy Max DPS</td></tr>
+                        <tr><td>Individual Threat</td><td class="dc-col">Defensive Threat × Offensive Threat</td></tr>
+                        <tr><td>Group Threat</td><td class="dc-col">LOG10((Threat × Threat Coefficient) × (Enemies in Room ^ Crowd Coefficient)) + 1</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -119,11 +118,11 @@
             <p>Graphing both Room Difficulty and gold-per-enemy values empowered us to clearly see the relationship between difficulty and reward and better understand why players were complaining. We identified priorities, strategies, and a roadmap that would quickly address player feedback.</p>
 
             <ul>
-                <li>Adjusting enemy health, number, and weapon selection</li>
-                <li>Adjusting enemy rewards</li>
+                <li>Adjusted enemy health, number, and weapon selection</li>
+                <li>Adjusted enemy rewards</li>
                 <li>Adjusted problematic enemy spawn locations and timing</li>
                 <li>Increased cover and adjusted navigation in some rooms</li>
-                <li>Added sign posting that indicated increased challenge in exits that took players from one route to another</li>
+                <li>Added signposting that indicated increased challenge in exits that took players from one route to another</li>
                 <li>Improved clarity of one-way and alternative room exits</li>
             </ul>
 
@@ -149,7 +148,7 @@
         <section class="highlight-section">
             <p class="highlight-section-label">Result</p>
             <h2></h2>
-            <p>First, we now had a tool that at a glance helped us understand our games' difficulty and encounter progression. This also empowered our capacity to tweak difficulty when needed.</p>
+            <p>First, we now had a tool that at a glance helped us understand our game's difficulty and encounter progression. This also empowered our capacity to tweak difficulty when needed.</p>
 
             <p>But more importantly, the changes had a big impact on player retention and difficulty perception.</p>
 

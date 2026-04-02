@@ -12,6 +12,7 @@
     --color-white: #D0D6E0;
 }
 
+/* ── Base Reset & Global Styles ────────────────────────────────────── */
 *
 {
     margin: 0;
@@ -43,7 +44,7 @@ h1
     color: var(--color-white);
 }
 
-/*-----------------Banner image-----------------*/
+/* ── Banner Image — hero image used on production.html ─────────────── */
 .banner {
     width: 100%; /* Full width of the parent container */
     height: 70vh; /* Height set to 70% of the viewport height */
@@ -54,11 +55,11 @@ h1
     width: 100%; /* Image will take full width of the container */
     height: 100%; /* Image will take full height of the container */
     object-fit: cover; /* Image will cover the area, maintaining aspect ratio */
-    object-position: center 20%; /* Adjusts the vertical focus to crop the image */
+    object-position: center bottom; /* Adjusts the vertical focus to crop the image */
 }
 
 
-/*-----------------navbar-----------------*/
+/* ── Navbar — fixed top bar, shared across all pages ───────────────── */
 .navbar {
     overflow: hidden;
     padding: 10px;
@@ -77,7 +78,7 @@ nav {
     flex-wrap: wrap; /* Allow items to wrap on smaller screens */
 }
 
-/* Title Container Styles */
+/* Title container — name and subtitle inside the navbar */
 .title-container {
     display: flex;
     flex-direction: column; /* Stack items vertically */
@@ -90,7 +91,7 @@ nav {
     margin: 0; /* Remove default margin */
 }
 
-/* Optional: spacing for title */
+/* Title sizing */
 .title-container h2 {
     font-size: 1.5em; /* Adjust title size */
 }
@@ -100,7 +101,7 @@ nav {
     color: var(--color-light-gray); /* Adjust color if needed */
 }
 
-/* Navbar Links Styles */
+/* Navbar links — right-side menu items */
 nav ul {
     display: flex; /* Make the list a flex container */
     margin-left: auto; /* Aligns menu items to the right */
@@ -137,7 +138,7 @@ nav ul li a:hover::after {
 }
 
 
-/*-----------------header-----------------*/
+/* ── Layout Container — max-width wrapper used across all sections ──── */
 
 .container
 {
@@ -148,7 +149,7 @@ nav ul li a:hover::after {
 
 }
 
-/*-----------------greeting-----------------*/
+/* ── Greeting Section — hero text block on index.html ──────────────── */
 .greeting {
     display: flex; /* Use flexbox for layout */
     flex-direction: column; /* Stack items vertically */
@@ -162,6 +163,23 @@ nav ul li a:hover::after {
     text-align: center; /* Center-align text within the element */
     color: var(--color-white); /* Use your theme's color */
     box-sizing: border-box; /* Include padding in the height/width calculation */
+}
+
+.greeting-header {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.greeting-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-image: url('images/site/headshot.jpg');
+    background-size: cover;
+    background-position: center 25%;
+    border: 2px solid var(--color-light-teal);
+    flex-shrink: 0;
 }
 
 .greeting h1 {
@@ -182,6 +200,7 @@ nav ul li a:hover::after {
 }
 
 
+/* ── Project Detail Page (project.html) — showcase card wrapper ─────── */
 .portfolio-showcase {
     max-width: 1200px;
     margin: 0 auto;
@@ -194,7 +213,7 @@ nav ul li a:hover::after {
     border-top: 3px solid var(--color-teal);
 }
 
-/* ── Challenge box — base (standalone / no-media variant) ─────────────── */
+/* Challenge box — difficulty/design callout block inside a project card */
 .challenge-content {
     margin-left: auto;
     margin-right: auto;
@@ -236,7 +255,7 @@ nav ul li a:hover::after {
     margin-top: 0.75rem;
 }
 
-/* ── Right column (media projects) ─────────────────────────────────────── */
+/* Right column — media layout variant (video + challenge box stacked) */
 .portfolio-right {
     flex: 1 1 40%;
     display: flex;
@@ -249,7 +268,7 @@ nav ul li a:hover::after {
     flex-shrink: 0;
 }
 
-/* Override centered standalone styles when inside the right column */
+/* Challenge box override when inside the right column layout */
 .portfolio-right .challenge-content {
     max-width: 100%;
     margin: 0;
@@ -258,7 +277,7 @@ nav ul li a:hover::after {
     transform: none !important;
 }
 
-/* Video grows to fill remaining column height after the challenge box */
+/* Video block — grows to fill remaining height in the right column */
 .portfolio-right .portfolio-video {
     flex: 1;
     min-height: 0;
@@ -279,6 +298,7 @@ nav ul li a:hover::after {
 }
 
 
+/* Two-column content layout — text left, media right */
 .portfolio-content {
   display: flex;
   flex-wrap: wrap;
@@ -291,7 +311,7 @@ nav ul li a:hover::after {
   flex: 1 40%;
 }
 
-/* No-media projects: cap line length and center in the card */
+/* Text-only variant — cap line length and center when no media column */
 .portfolio-text:only-child {
     max-width: 720px;
     margin: 0 auto;
@@ -339,6 +359,7 @@ nav ul li a:hover::after {
     color: var(--color-light-gray);
 }
 
+/* Video and image blocks */
 .portfolio-video {
   margin: auto;
   flex: 1 1 40%;
@@ -370,7 +391,7 @@ nav ul li a:hover::after {
   width: 100%;
 }
 
-/* Carousel */
+/* Image carousels — horizontal scroll strips inside project cards */
 .portfolio-carousel {
   position: relative;
   overflow: hidden;
@@ -470,7 +491,7 @@ nav ul li a:hover::after {
 
 
 
-/*-----------------about-----------------*/
+/* ── About Section — currently unused ──────────────────────────────── */
 #about
 {
     margin-top: 5%;
@@ -571,7 +592,7 @@ nav ul li a:hover::after {
 {
     display: block;
 }
-/*-----------------skills-----------------*/
+/* ── Design Pillars Section — #services grid on index.html ─────────── */
 #services
 {
     padding: 60px 0;
@@ -620,13 +641,14 @@ nav ul li a:hover::after {
     transform: translateY(-10px);
 }
 
-/*-----------------portfolio-----------------*/
+/* ── Games Section — #portfolio grid on index.html ─────────────────── */
 #portfolio,
 #experiences
 {
     padding: 60px 0;
 }
 
+/* ── Contact Section — no longer used as a standalone section ───────── */
 #contact
 {
     padding: 60px 0;
@@ -748,7 +770,7 @@ nav ul li a:hover::after {
 {
     background: var(--color-teal);
 }
-/*-----------------contact-----------------*/
+/* ── Social Icons — LinkedIn/email icons, now in greeting section ────── */
 
 .social-icons p i
 {
@@ -781,7 +803,7 @@ nav ul li a:hover::after {
     background: var(--color-teal);
 }
 
-/*-----------------footer-----------------*/
+/* ── Footer — copyright bar ─────────────────────────────────────────── */
 .copyright
 {
     width: 100%;
@@ -803,7 +825,7 @@ nav ul li a:hover::after {
 
 
 
-/*-----------------analytics dashboard-----------------*/
+/* ── Analytics Dashboard — live metrics cards inside project.html ────── */
 
 .project-dashboard {
     margin-top: 2rem;
@@ -839,7 +861,7 @@ nav ul li a:hover::after {
     color: rgba(197, 198, 199, 0.55);
 }
 
-/* Headline stat cards */
+/* Headline stat cards — top row of 4 KPI tiles */
 .dashboard-stats {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -878,7 +900,7 @@ nav ul li a:hover::after {
     letter-spacing: 0.05em;
 }
 
-/* Chart cards */
+/* Chart cards — retention bars, difficulty bars, session highlight */
 .dashboard-charts {
     display: grid;
     grid-template-columns: 1fr 1fr auto;
@@ -901,7 +923,7 @@ nav ul li a:hover::after {
     margin-bottom: 0.875rem;
 }
 
-/* Retention bars */
+/* Retention bar rows — before/after comparison bars */
 .retention-row {
     display: flex;
     align-items: center;
@@ -975,7 +997,7 @@ nav ul li a:hover::after {
 .legend-before::before { background: rgba(47, 104, 101, 0.55); }
 .legend-after::before  { background: var(--color-light-teal); }
 
-/* Difficulty bars */
+/* Difficulty perception bars — % feedback breakdown */
 .diff-row {
     display: flex;
     align-items: center;
@@ -1027,7 +1049,7 @@ nav ul li a:hover::after {
     color: var(--color-light-teal);
 }
 
-/* Session highlight card */
+/* Session highlight card — single large stat in the dashboard */
 .dash-highlight-card {
     display: flex;
     flex-direction: column;
@@ -1059,7 +1081,7 @@ nav ul li a:hover::after {
     line-height: 1.4;
 }
 
-/*-----------------media queries-----------------*/
+/* ── Media Queries — responsive breakpoints ─────────────────────────── */
 nav .fa-solid
 {
     display: none;
@@ -1190,7 +1212,7 @@ nav .fa-solid
 
 }
 
-/* ── Lightbox overrides (replace missing PNG assets with CSS) ────────────── */
+/* ── Lightbox Overrides — replaces missing PNG nav/close assets with CSS ── */
 .lb-nav a.lb-prev,
 .lb-nav a.lb-next {
     background-image: none;
@@ -1244,7 +1266,7 @@ nav .fa-solid
 .lb-data .lb-close::after  { content: '✕'; }
 .lb-data .lb-close:hover   { opacity: 1; }
 
-/* ── Portfolio Grid ──────────────────────────────────────────────────────── */
+/* ── Cards Grid — shared grid for both highlights and games sections ─── */
 .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -1317,27 +1339,7 @@ nav .fa-solid
     opacity: 0.6;
 }
 
-/* ── Floating back button (highlight pages) ─────────────────────────────────── */
-.hl-back-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    padding: 0.35em 0.8em;
-    border: 1px solid rgba(91,164,245,0.25);
-    border-radius: 999px;
-    color: var(--color-light-teal);
-    text-decoration: none;
-    font-size: 0.8rem;
-    font-family: 'Inter', sans-serif;
-    white-space: nowrap;
-    transition: background 0.2s, border-color 0.2s;
-}
-.hl-back-btn:hover {
-    background: rgba(91,164,245,0.15);
-    border-color: rgba(91,164,245,0.5);
-}
-
-/* ── Project detail page (project.html) ─────────────────────────────────────── */
+/* ── Project Back Bar — back navigation bar on project.html (legacy) ─── */
 .project-back-bar {
     padding: 1rem 2rem;
     margin-top: 60px;
@@ -1365,12 +1367,12 @@ nav .fa-solid
     }
 }
 
-/* ── Highlights grid — centered ─────────────────────────────────────────── */
+/* ── Highlights Grid — centering override for the career highlights cards */
 #highlights-container .portfolio-grid {
     justify-content: center;
 }
 
-/* ── Highlight card tag ───────────────────────────────────────────────────── */
+/* ── Highlight Card Tag — discipline label above the card title ───────── */
 .highlight-card-tag {
     font-size: 0.65rem;
     font-weight: 700;
@@ -1381,7 +1383,7 @@ nav .fa-solid
     margin-bottom: 0.2rem;
 }
 
-/* ── Coming soon card ────────────────────────────────────────────────────── */
+/* ── Coming Soon Card — dimmed, non-clickable variant for empty highlights */
 .project-card--coming-soon {
     cursor: default;
     opacity: 0.5;
@@ -1403,7 +1405,7 @@ nav .fa-solid
     opacity: 0.6;
 }
 
-/* ── Highlight article pages ─────────────────────────────────────────────── */
+/* ── Highlight Article Pages — layout for highlight-*.html blog pages ──── */
 .highlight-hero {
     position: relative;
     width: 100%;
@@ -1496,7 +1498,7 @@ nav .fa-solid
     display: block;
 }
 
-/* Formula block */
+/* Formula block — monospace callout used in highlight-liveops.html */
 .highlight-formula {
     background: var(--color-medium-gray);
     border-left: 3px solid var(--color-light-teal);
@@ -1519,7 +1521,7 @@ nav .fa-solid
     margin-bottom: 0.15rem;
 }
 
-/* Stat callout row */
+/* Stat callout row — before/after retention figures */
 .highlight-stats-row {
     display: flex;
     gap: 1rem;
@@ -1566,7 +1568,7 @@ nav .fa-solid
     display: block;
 }
 
-/* Room data table */
+/* Data table — room difficulty/formula tables in highlight pages */
 .highlight-table-wrap {
     overflow-x: auto;
     margin: 1.25rem 0;

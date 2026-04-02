@@ -15,7 +15,7 @@
             "Built and implemented 50+ rooms and polished wayfinding flows to support gameplay, tone, and pacing.",
             "Diagnosed retention and satisfaction gaps through live analytics."
         ],
-        "thumbnail": "images/DND_landscape_comp.jpeg",
+        "thumbnail": "images/highlights/DND_landscape_comp.jpeg",
         "media": { "type": "video", "src": "video/DND_Trailer.mp4" },
         "challengeParagraphs": [
             "Creating a legible and navigable interconnected map while avoiding softlocks.",
@@ -67,7 +67,7 @@
             "Designed player 'boons' and upgrades.",
             "Designed and implemented enemy encounters and level layouts."
         ],
-        "thumbnail": "images/null_core_title.png",
+        "thumbnail": "images/site/null_core_title.png",
         "media": { "type": "video", "src": "video/NullCore.mp4" },
         "challengeParagraphs": [
             "Creating 'boons' and upgrades that can synergize across different playstyles."
@@ -88,7 +88,7 @@
             "Built and implemented level layouts and wayfinding flows to support gameplay, tone, and pacing.",
             "Diagnosed retention and satisfaction gaps through live analytics."
         ],
-        "thumbnail": "images/twd_landscape_comp_s.jpeg",
+        "thumbnail": "images/projects/twdu/twd_landscape_comp_s.jpeg",
         "media": { "type": "video", "src": "video/TWDU_CY_GameLoop.mp4" },
         "challengeParagraphs": [
             "Designing a dynamic enemy system that maintained challenge for 1 or 12 players in different game areas.",
@@ -131,18 +131,18 @@
             "buttons": true,
             "lightboxGroup": "TWDU_CY_SET",
             "images": [
-                "images/TWDU_CY_GameFlow.jpg",
-                "images/TWDU_CY_LevelProgression.gif",
-                "images/TWDU_CY_RewardsDiag.jpg",
-                "images/TWDU_CY_Rewards.png",
-                "images/TWDU_CY_Rarities.png",
-                "images/TWDU_CY_RewardStore.png",
-                "images/TWDU_CY_WaveManagement.png",
-                "images/TWDU_CY_Waves.gif",
-                "images/TWDU_CU_BasicLayout.jpg",
-                "images/TWDU_CY_Greybox1.png",
-                "images/TWDU_LayoutResult.png",
-                "images/TWDU_CY_FinalMap.png"
+                "images/projects/twdu/TWDU_CY_GameFlow.jpg",
+                "images/projects/twdu/TWDU_CY_LevelProgression.gif",
+                "images/projects/twdu/TWDU_CY_RewardsDiag.jpg",
+                "images/projects/twdu/TWDU_CY_Rewards.png",
+                "images/projects/twdu/TWDU_CY_Rarities.png",
+                "images/projects/twdu/TWDU_CY_RewardStore.png",
+                "images/projects/twdu/TWDU_CY_WaveManagement.png",
+                "images/projects/twdu/TWDU_CY_Waves.gif",
+                "images/projects/twdu/TWDU_CU_BasicLayout.jpg",
+                "images/projects/twdu/TWDU_CY_Greybox1.png",
+                "images/projects/twdu/TWDU_LayoutResult.png",
+                "images/projects/twdu/TWDU_CY_FinalMap.png"
             ]
         }
     },
@@ -159,7 +159,7 @@
             "Designed and implemented player's range abilities using BPs.",
             "Conducted playtesting and player surveying to refine controls and balance."
         ],
-        "thumbnail": "images/ue_background.jpg",
+        "thumbnail": "images/site/ue_background.jpg",
         "media": {
             "type": "iframe",
             "src": "https://www.youtube.com/embed/7mQSr-oY2Xw?si=BgupRKAtNRcn7fdJ"
@@ -173,13 +173,13 @@
             "buttons": true,
             "lightboxGroup": "bosslab-set",
             "images": [
-                "images/BossLab_gif01.gif",
-                "images/BossLabs_Gameflow.jpg",
-                "images/BossLab_player.png",
-                "images/Bosslabgif4.gif",
-                "images/Bosslabgif2.gif",
-                "images/BossLab_BossA.jpg",
-                "images/BossLab_BossB.jpg"
+                "images/projects/bosslab/BossLab_gif01.gif",
+                "images/projects/bosslab/BossLabs_Gameflow.jpg",
+                "images/projects/bosslab/BossLab_player.png",
+                "images/projects/bosslab/Bosslabgif4.gif",
+                "images/projects/bosslab/Bosslabgif2.gif",
+                "images/projects/bosslab/BossLab_BossA.jpg",
+                "images/projects/bosslab/BossLab_BossB.jpg"
             ]
         }
     },
@@ -199,7 +199,7 @@
             "Conducted research on edutainment games and Canadian invasive species.",
             "Organized and facilitated playtest sessions, gathering data on mechanics' clarity, scientific content, layout, and user experience."
         ],
-        "thumbnail": "images/Species01.png",
+        "thumbnail": "images/projects/species/Species01.png",
         "media": null,
         "challengeParagraphs": [
             "Balancing accessibility, gameplay, and scientific accuracy to ensure the game was engaging and informative without overloading players with facts.",
@@ -210,21 +210,21 @@
             "buttons": true,
             "lightboxGroup": "image-set",
             "images": [
-                "images/Species01.png",
-                "images/Species02.png",
-                "images/Species03.png",
-                "images/Species05.png",
-                "images/Species04.png",
-                "images/Species07.png",
-                "images/Species09.png",
-                "images/Species10.png",
-                "images/Species11.png",
-                "images/Species12.png",
-                "images/Species13.png",
-                "images/Species14.png",
-                "images/Species_01.jpg",
-                "images/Species_02.jpg",
-                "images/Species_03.jpg"
+                "images/projects/species/Species01.png",
+                "images/projects/species/Species02.png",
+                "images/projects/species/Species03.png",
+                "images/projects/species/Species05.png",
+                "images/projects/species/Species04.png",
+                "images/projects/species/Species07.png",
+                "images/projects/species/Species09.png",
+                "images/projects/species/Species10.png",
+                "images/projects/species/Species11.png",
+                "images/projects/species/Species12.png",
+                "images/projects/species/Species13.png",
+                "images/projects/species/Species14.png",
+                "images/projects/species/Species_01.jpg",
+                "images/projects/species/Species_02.jpg",
+                "images/projects/species/Species_03.jpg"
             ]
         }
     },
@@ -241,7 +241,7 @@
             "Designed core gameplay, progression systems, reward system, and metagame loops.",
             "Built and implemented core level layout."
         ],
-        "thumbnail": "images/Sigma_GameFlow2.png",
+        "thumbnail": "images/projects/sigma/Sigma_GameFlow2.png",
         "media": null,
         "challengeParagraphs": [
             "Designing and balancing asymmetric teams, with different incentives and progressions."
@@ -251,9 +251,9 @@
             "buttons": false,
             "lightboxGroup": "Sigma_Set",
             "images": [
-                "images/Sigma_GameFlow2.png",
-                "images/Sigma_Gameflow3.png",
-                "images/Sigma_LAyout.jpg"
+                "images/projects/sigma/Sigma_GameFlow2.png",
+                "images/projects/sigma/Sigma_Gameflow3.png",
+                "images/projects/sigma/Sigma_LAyout.jpg"
             ]
         }
     },
@@ -271,7 +271,7 @@
             "Developed combat system simulations to inform balancing decisions.",
             "Coordinated with other systems designers to balance player-led economy."
         ],
-        "thumbnail": "images/work-3.png",
+        "thumbnail": "images/site/work-3.png",
         "media": {
             "type": "iframe",
             "src": "https://www.youtube.com/embed/z1ALPAewJVU?si=UjblGnqBu5d3ZwKF"
@@ -285,11 +285,11 @@
             "buttons": true,
             "lightboxGroup": "Runiverse-Set",
             "images": [
-                "images/Runiverse_crafting.gif",
-                "images/Runiverse_stats.webp",
-                "images/Runiverse_stats2.webp",
-                "images/Runiverse_player.webp",
-                "images/Runiverse_combat.webp"
+                "images/projects/runiverse/Runiverse_crafting.gif",
+                "images/projects/runiverse/Runiverse_stats.webp",
+                "images/projects/runiverse/Runiverse_stats2.webp",
+                "images/projects/runiverse/Runiverse_player.webp",
+                "images/projects/runiverse/Runiverse_combat.webp"
             ]
         }
     },
@@ -304,11 +304,11 @@
             "Designed game world, story, and characters.",
             "Integrated Yarn Spinner to develop game's branching narrative."
         ],
-        "thumbnail": "images/Racoon_Title.png",
+        "thumbnail": "images/projects/raccoon/Racoon_Title.png",
         "media": {
             "type": "video",
             "src": "video/Racoon_ScenarioA.mp4",
-            "poster": "images/Racoon_Title.png"
+            "poster": "images/projects/raccoon/Racoon_Title.png"
         },
         "challengeParagraphs": [
             "Managing and implementing a branching narrative system."
@@ -318,11 +318,11 @@
             "buttons": true,
             "lightboxGroup": "racoon-set",
             "images": [
-                "images/Racoon_Screenshot1.png",
-                "images/Racoon_Screenshot2.png",
-                "images/Racoon_dialogs.jpg",
-                "images/Racoon_Screenshot3.png",
-                "images/Racoon_dialogs2.jpg"
+                "images/projects/raccoon/Racoon_Screenshot1.png",
+                "images/projects/raccoon/Racoon_Screenshot2.png",
+                "images/projects/raccoon/Racoon_dialogs.jpg",
+                "images/projects/raccoon/Racoon_Screenshot3.png",
+                "images/projects/raccoon/Racoon_dialogs2.jpg"
             ]
         }
     }
