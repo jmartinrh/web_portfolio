@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bringing the D20 to Fortnite — Martín Rodríguez</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/6f58c6ab29.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <nav>
+            <input type="checkbox" id="menu-toggle" hidden>
+            <label for="menu-toggle" class="fa-solid fa-bars open-icon"></label>
+            <label for="menu-toggle" class="fa-solid fa-xmark close-icon"></label>
+            <div class="title-container">
+                <h2>Martín Rodríguez</h2>
+                <p>Game Designer</p>
+            </div>
+            <ul id="sidemenu">
+                <li><a href="index.html#highlights"><i class="fa-solid fa-arrow-left"></i> Back</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="highlight-hero">
+        <img src="images/projects/dnd_d20/d20_screengrab_3.png" alt="Bringing the D20 to Fortnite">
+        <div class="highlight-hero-overlay">
+            <span class="highlight-tag">Systems Design · Feature Design</span>
+            <h1>Bringing the D20 to Fortnite</h1>
+        </div>
+    </div>
+
+    <div class="highlight-body">
+
+        <section class="highlight-section">
+            <p class="highlight-section-label">Context</p>
+            <h2></h2>
+            <p>We needed to adapt "D20 test" to our UEFN D&D game. To players unfamiliar with TTRPGs, "D20 Tests" are moments of play where the outcome of an action is uncertain, so players roll a 20-sided die to determine success or failure.</p>
+        </section>
+
+        <section class="highlight-section">
+            <p class="highlight-section-label">Problem</p>
+            <h2></h2>
+            <p>D20 tests and attributes are abstract representations of the player's character's abilities and their attempts to solve problems in the game world. Action-oriented shooters that are reliant on the player's finger dexterity don't tend to have these kinds of moments. How could we make the dice roll feel at home in Fortnite?</p>
+        </section>
+
+        <section class="highlight-section">
+            <p class="highlight-section-label">Solution</p>
+            <h2></h2>
+            <p>In discussions with Creative Director LD Zambrano and Lead Designer César Solis we knew that we wouldn't adapt the attribute dependent systems of the TTRPG. Fortnite has its health and damage systems that players are familiar with, and creating a new custom one would introduce a lot of friction. What I was tasked with was designing features that:</p>
+            <ol>
+                <li>Would familiarize players with the emblematic dice rolling and player attribute system</li>
+                <li>Tie the system to exploration in our map</li>
+                <li>Encourage cooperative play</li>
+                <li>Have a recognizable and readable representation</li>
+            </ol>
+
+            <p>I took cues from RPGs like Skyrim and Fallout 3 that are fairly action-oriented, latching on Fallout 3's dialogue checks. I also explored what we could learn from Baldur's Gate 3's dice rolling and what Larian learned in their early access testing to help players understand the feature.</p>
+            <p>After some prototyping and testing with UEFN tools, I landed on:</p>
+            <ul>
+                <li>D20 tests that were a lock-and-key system that gatekept access to our map's alternate routes or treasure</li>
+                <li>An advantage system that increased success when players were together</li>
+                <li>Math simplification: use "ability score modifiers" instead of "raw ability scores"</li>
+            </ul>
+
+            <p class="highlight-note">Here are the original feature diagrams and an updated flowchart.</p>
+
+
+            <div class="hl-carousel">
+                <div class="hl-carousel-track" id="hl-carousel-track-solution">
+                    <div class="hl-carousel-slide hl-carousel-slide--grid-3">
+                        <img src="images/projects/dnd_d20/d20_challenge_1.jpg" alt="D20 challenge lock">
+                        <img src="images/projects/dnd_d20/d20_challenge_2.jpg" alt="D20 challenge interaction">
+                        <img src="images/projects/dnd_d20/d20_challenge_3.jpg" alt="D20 challenge result">
+                    </div>
+                    <div class="hl-carousel-slide hl-carousel-slide--grid-3">
+                        <img src="images/projects/dnd_d20/D20_collab_1.jpg" alt="D20 collaboration 1">
+                        <img src="images/projects/dnd_d20/D20_collab_2.jpg" alt="D20 collaboration 2">
+                        <img src="images/projects/dnd_d20/D20_collab_3.jpg" alt="D20 collaboration 3">
+                    </div>
+                    <div class="hl-carousel-slide">
+                        <img src="images/projects/dnd_d20/d20_flowchart.png" alt="D20 system flowchart">
+                    </div>
+                </div>
+                <button class="hl-carousel-btn hl-carousel-prev" aria-label="Previous">&#8249;</button>
+                <button class="hl-carousel-btn hl-carousel-next" aria-label="Next">&#8250;</button>
+                <div class="hl-carousel-dots" id="hl-carousel-dots-solution"></div>
+            </div>
+
+            <p>Lock-and-key D20 tests worked well from the start. I closely worked with engineers to create modules that I could easily duplicate and add to new rooms. To help players identify the tests easily, I used a single context per attribute. This way, players could connect the attribute with the obstacle. I coordinated the details on UI representation and HUD messages with UI/UX and then assembled the feature.</p>
+            <p>I didn't want the players to do a lot of math in their heads, so instead of using the full 0 to 20 ability scores, using something akin to just the modifiers (-5 to +10) simplified what we had to represent. We ended up calling it bonuses.</p>
+            <p>The advantage system had more revisions as we landed on something that was low friction but satisfying. From testing, User Research suggested using emotes as trigger events, which ended up working really well in Fortnite's social context, adding agency to player collaboration, and –bonus– tied in nicely with D&D's Bardic Inspiration mechanic.</p>
+            <p>The feature had several iterations before launch as we internally playtested, and additional adjustments were implemented after launch as we received feedback from the community. Throughout, I:</p>
+            <ul>
+                <li>Created new events from modules</li>
+                <li>Adjusted the assets used and their contexts</li>
+                <li>Balanced the difficulty class of the events</li>
+                <li>Balanced the rewards</li>
+                <li>Closely reviewed internal playtest and player feedback</li>
+            </ul>
+        </section>
+
+        <section class="highlight-section">
+            <p class="highlight-section-label">Result</p>
+            <h2></h2>
+            <p>I think the results speak for themselves:</p>
+
+            <div class="hl-video">
+                <video controls>
+                    <source src="images/projects/dnd_d20/d20_result_video.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <p>I distributed the D20 challenges in our 5 game biomes. Players could supplement their items and healing by interacting with the feature, increasing their power and survivability. And whenever a room had an alternate path the players could take, I added "locked doors". This way, interfacing was tied to exploration. Alternate routes offered higher rewards, but had tougher enemies.</p>
+
+
+            <div class="hl-carousel">
+                <div class="hl-carousel-track" id="hl-carousel-track-result">
+                    <div class="hl-carousel-slide"><img src="images/projects/dnd_d20/d20_screengrab.png" alt="D20 in game"></div>
+                    <div class="hl-carousel-slide"><img src="images/projects/dnd_d20/d20_screengrab_2.png" alt="D20 in game"></div>
+                    <div class="hl-carousel-slide"><img src="images/projects/dnd_d20/d20_screengrab_3.png" alt="D20 in game"></div>
+                    <div class="hl-carousel-slide"><img src="images/projects/dnd_d20/d20_screengrab_4.png" alt="D20 in game"></div>
+                    <div class="hl-carousel-slide hl-carousel-slide--grid-2">
+                        <img src="images/projects/dnd_d20/ScreenShot00020.png" alt="D20 screenshot">
+                        <img src="images/projects/dnd_d20/ScreenShot00021.png" alt="D20 screenshot">
+                        <img src="images/projects/dnd_d20/ScreenShot00022.png" alt="D20 screenshot">
+                        <img src="images/projects/dnd_d20/ScreenShot00023.png" alt="D20 screenshot">
+                    </div>
+                    <div class="hl-carousel-slide hl-carousel-slide--grid-2">
+                        <img src="images/projects/dnd_d20/ScreenShot00024.png" alt="D20 screenshot">
+                        <img src="images/projects/dnd_d20/ScreenShot00025.png" alt="D20 screenshot">
+                        <img src="images/projects/dnd_d20/ScreenShot00026.png" alt="D20 screenshot">
+                        <img src="images/projects/dnd_d20/ScreenShot00027.png" alt="D20 screenshot">
+                    </div>
+                </div>
+                <button class="hl-carousel-btn hl-carousel-prev" aria-label="Previous">&#8249;</button>
+                <button class="hl-carousel-btn hl-carousel-next" aria-label="Next">&#8250;</button>
+                <div class="hl-carousel-dots" id="hl-carousel-dots-result"></div>
+            </div>
+
+            <p>However, I did fail to deliver one of the attribute challenges, Charisma, due to time constraints and incompatibilities with the modules we used for the other D20 tests. And Critical Failures that damaged players were deemed too punishing.</p>
+        </section>
+
+    </div>
+
+    <section id="contact">
+        <div class="container">
+            <h2 class="sub-title">Let's Connect!</h2>
+            <div class="social-icons icons">
+                <a href="https://www.linkedin.com/in/martinrhprod/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="mailto:martinrh.prod@gmail.com"><i class="fa-regular fa-envelope"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+    function initCarousel(trackId, dotsId, wrapEl) {
+        const track = document.getElementById(trackId);
+        const dotsContainer = document.getElementById(dotsId);
+        if (!track || !dotsContainer) return;
+        const slides = track.querySelectorAll('.hl-carousel-slide');
+        let current = 0;
+
+        slides.forEach((_, i) => {
+            const dot = document.createElement('span');
+            dot.className = 'hl-carousel-dot' + (i === 0 ? ' active' : '');
+            dot.addEventListener('click', () => goTo(i));
+            dotsContainer.appendChild(dot);
+        });
+
+        function goTo(index) {
+            current = (index + slides.length) % slides.length;
+            track.style.transform = `translateX(-${current * 100}%)`;
+            dotsContainer.querySelectorAll('.hl-carousel-dot').forEach((d, i) =>
+                d.classList.toggle('active', i === current));
+        }
+
+        const wrap = track.closest('.hl-carousel');
+        wrap.querySelector('.hl-carousel-prev').addEventListener('click', () => goTo(current - 1));
+        wrap.querySelector('.hl-carousel-next').addEventListener('click', () => goTo(current + 1));
+    }
+
+    initCarousel('hl-carousel-track-solution', 'hl-carousel-dots-solution');
+    initCarousel('hl-carousel-track-result',   'hl-carousel-dots-result');
+    </script>
+</body>
+</html>

@@ -17,19 +17,19 @@ Creating a new basis for our game’s balance so we could tweak rooms with data,
 
 
 Solution
-The solution was multifaceted and required me to approach the problem from both a systems and level design perspective.
+The solution was multifaceted and required me to approach the problem both from systems and level design.
 
 
-Alongside our Product Manager Jorge Castaño and User Researcher Nicolás Perez we reviewed game analytics and player feedback. We identified the rooms players found unfair: rooms with high death and quit ratios. 
+Alongside our Product Manager Jorge Castaño and User Researcher Nicolás Perez, we reviewed game analytics and player feedback. We identified the rooms players found unfair: rooms with high death and quit rates. 
 
 
-Some rooms had a bad combination of layout and enemy weapons: Explosive weapons in Fortnite are powerful and can damage players behind cover. Layouts that limited cover rotation options or had strong enemy highground positions put players at a big disadvantage. Other rooms were too crowded. In some parts of the map, the difficulty spike between rooms was too steep and poorly communicated.
+Some rooms had a bad combination of layout and enemy weapons: Explosive weapons in Fortnite are powerful and can damage players behind cover. Layouts that limited cover rotation options or had strong enemy high ground positions put players at a big disadvantage. Other rooms were too crowded. In some parts of the map, the challenge hike between rooms was too steep and poorly communicated.
 
 
-This prompted me to review level design elements that impacted difficulty: room layouts, exit signposting, enemy positions, and cover. I highlighted rooms that needed fixes and drafted an action plan.
+This prompted me to review level design elements that impacted difficulty: room layouts, exit signposting, enemy positions, and cover. I highlighted rooms that needed fixes and drafted action items.
 
 
-At the same time I had discussions with my Design Lead César Solis to understand how we wanted to tie room difficulty and the economy together and started working on some formulas. I calculated each enemy’s individual Threat Value and then each room’s.
+At the same time I had discussions with my Design Lead César Solis to understand how we wanted to tie room difficulty and the economy together and started working on some formulas. I calculated each enemy’s individual Threat Value and then each room's.
 
 
 Defensive Threat Value
@@ -47,24 +47,24 @@ Defensive Threat Value
 Graphing both Room Difficulty and gold-per-enemy values empowered us to clearly see the relationship between difficulty and reward and better understand why players were complaining. We identified priorities, strategies, and a roadmap that would quickly address player feedback.
 
 
-* Adjusted enemy health, number, and weapon selection
-* Adjusted enemy rewards
+* Adjusting enemy health, number, and weapon selection
+* Adjusting enemy rewards
 * Adjusted problematic enemy spawn locations and timing
 * Increased cover and adjusted navigation in some rooms
-* Added signposting that indicated increased challenge in exits that took players from one route to another
+* Added sign posting that indicated increased challenge in exits that took players from one route to another
 * Improved clarity of one-way and alternative room exits
 
 
 Result
-First, we now had a tool that at a glance helped us understand our games' difficulty and encounter progression. This also empowered our capacity to tweak difficulty when needed.
+First, we now had a tool that at a glance helped us understand our games' difficulty and encounter progression. This also made it easier to tweak difficulty as needed..
 
 
-But more importantly, the changes had a big impact on player retention and difficulty perception.
+But more importantly, the changes had a big impact on player retention and difficulty perception, reducing the quit ratio.
 
 
 Walking Dead Level Design
 Context
-For The Walking Dead experience, I had designed an interconnected map that had 3 mirrored team areas. Each team had to go through a PvE section before reaching the PvPvE arenas where the king-of-the hill dynamics happened. I wanted a mix of claustrophobic spaces to spotlight the zombies and bigger arenas that supported PvE fighting.
+For The Walking Dead experience, I had designed an interconnected map that had 3 mirrored team areas. Each team had to go through a PvE section before reaching the PvPvE arenas where the king-of-the hill dynamics happened. I wanted a mix of claustrophobic spaces to spotlight the zombies, and bigger arenas that supported PvE fighting.
 
 
 The Problem
@@ -79,29 +79,81 @@ Solution
 There were several fronts I had to tackle. First I went over the playtest reports and identified the most critical areas where players got lost. I followed by walking the level and getting a wayfinding understanding of what the problems could be. Disorientation mainly happened because decoration was too busy, pathing was not clear, and lighting was not being used to direct player attention.
 
 
-Knowing just an art and light pass was not enough, I reviewed competitive shooters like CS:GO, Valorant, Apex Legends and Epic’s own Ballistic game mode to bring over some additional good practices. I then consulted with our UI/UX lead Andrés Pisso to get his take on what HUD elements would best help players find their way.
+Knowing just an art and light pass was not enough, I reviewed competitive shooters like CS:GO, Valorant, Apex Legends and Epic’s own Ballistic game mode to bring over some additional good practices. I then consulted with our UI/UX lead Andrés Pisso to get his take on what HUD elements would best help players find their way. I was already keen on using UEFNs beacon devices as it has a built-in clamp-to-screen and distance-display features.
 
 
-With all the information in hand I made a plan and coordinated meetings to present to stakeholders and other project area leads to get buy-in and feedback. I coordinated the plan with production, checked for dependencies, and got started:
+With a plan in hand, I had buy-in meetings with stakeholders and production. Once I had clarity on dependencies, I got started with:
 
 
-* Collaborated with the environmental art team to add team colours to structures, clear pathing, and use light to direct player attention to exits.
-* Added graffiti decals to signpost exits, areas, and directionality.
-* Created a system that turned some decals on or off depending on where the capture area was located.
-* Added HUD beacons that clamped to screen to mark each capture area when active
-* Added HUD objective messages.
-* Added notifications for important state changes that needed player attention.
+* Collaborating with environmental artists to add team colours to structures, clear pathing, and use light to direct player attention to exits.
+* Adding graffiti decals to signpost exits, areas, and map flow.
+* Creating a system that turned some decals on or off depending on where the capture area was located.
+* Adding HUD beacons that clamped to screen to mark each capture area when active
+* Adding HUD objective messages.
+* Adding notifications for important state changes that needed player attention.
 
 
 Result
-I delivered a map with tools that directed navigation both through the environment itself (diegetically) and through HUD elements (non-diegetically). Through playtesting and launch, we did not receive complaints or issues regarding wayfinding or objective clarity.
+I delivered a map with tools that directed navigation diegetically and non-diegetically. Through playtesting and launch, we did not receive complaints or issues regarding wayfinding or objective clarity.
 
 
-DND D20 system
+DND Bringing the D20 to Fortnite
+Context
+We needed to adapt “D20 test” to our UEFN D&D game. To players unfamiliar with TTRPGs, “D20 Tests” are moments of play where the outcome of an action is uncertain, so players roll a 20-sided die to determine success or failure. 
 
 
+The Problem
+D20 tests and attributes are abstract representations of the player’s character's abilities and their attempts to solve problems in the game world. Action-oriented shooters that are reliant on the player’s finger dexterity don’t tend to have these kinds of moments. How could we make the dice roll feel at home in Fortnite?
 
 
+The Solution
+In discussions with Creative Director LD Zambrano and Lead Designer César Solis we knew that we wouldn’t adapt the attribute dependent systems of the TTRPG. Fortnite has its health and damage systems that players are familiar with, and creating a new custom one would introduce a lot of friction. What I was tasked with was designing features that:
+
+
+1. Would familiarize players with the emblematic dice rolling and player attribute system
+2. Tie the system to exploration in our map
+3. Encourage cooperative play
+4. Have a recognizable and readable representation
+
+
+I took cues from RPGs like Skyrim and Fallout 3 that are fairly action-oriented, latching on Fallout 3’s dialogue checks. I also explored what we could learn from Baldur’s Gate 3's dice rolling and what Larian learned in their early access testing to help players understand the feature. 
+
+
+After some prototyping and testing with UEFN tools, I landed on:
+
+
+* D20 tests that were a lock-and-key system that gatekept access to our map’s alternate routes or treasure
+* An advantage system that increased success when players were together
+* Math simplification: use “ability score modifiers” instead of “raw ability scores”
+
+
+Lock-and-key D20 tests worked well from the start. I closely worked with engineers to create modules that I could easily duplicate and add to new rooms. To help players identify the tests easily, I used a single context per attribute. This way, players could connect the attribute with the obstacle. I coordinated the details on UI representation and HUD messages with UI/UX and then assembled the feature.
+
+
+I didn’t want the players to do a lot of math in their heads, so instead of using the full 0 to 20 ability scores, using something akin to just the modifiers (-5 to +10) simplified what we had to represent. We ended up calling it bonuses.
+
+
+The advantage system had more revisions as we landed on something that was low friction but satisfying. From testing, User Research suggested using emotes as trigger events, which ended up working really well in Fortnite’s social context, adding agency to player collaboration, and –bonus– tied in nicely with D&D’s Bardic Inspiration mechanic.
+
+
+The feature had several iterations before launch as we internally playtested, and additional adjustments were implemented after launch as we received feedback from the community. Throughout, I:
+
+
+* Created new events from modules
+* Adjusted the assets used and their contexts
+* Balanced the difficulty class of the events
+* Balanced the rewards
+* Closely reviewed internal playtest and player feedback
+
+
+Results
+I think the results speak for themselves:
+
+
+VIDEO
+
+
+However, I did fail to deliver one of the attribute challenges, Charisma, due to time constraints and incompatibilities with the modules we used for the other D20 tests.
 Walking Dead Difficulty System
 Context
 
@@ -109,14 +161,18 @@ Context
 
 
 Problem
-The game was playable by 1 to 12 players and the difficulty of the different areas had to adjust accordingly. UEFN NPCs’ parameters cannot be edited live, so we had to come up with a different solution. Additionally, we couldn’t have more than 90 entities running simultaneously.
+
+
 
 
 Goal 
-Design and implement a dynamic difficulty system for the PvE portion of the experience 
+
+
 
 
 Solution
+
+
 
 
 Result

@@ -1491,6 +1491,17 @@ nav .fa-solid
     margin-bottom: 1rem;
 }
 
+.highlight-section ul,
+.highlight-section ol {
+    padding-left: 1.75rem;
+    margin: 1.25rem 0;
+}
+
+.highlight-section li {
+    margin-bottom: 0.4rem;
+    line-height: 1.75;
+}
+
 .highlight-section img {
     width: 100%;
     border-radius: 6px;
@@ -1634,6 +1645,116 @@ nav .fa-solid
     border-left: 2px solid rgba(91, 164, 245, 0.3);
     padding-left: 0.75rem;
     margin: 1rem 0;
+}
+
+/* ── Highlight page carousel ─────────────────────────────────────────── */
+.hl-carousel {
+    position: relative;
+    margin: 1.5rem 0 0.5rem;
+    overflow: hidden;
+    border-radius: 6px;
+}
+.hl-carousel-track {
+    display: flex;
+    transition: transform 0.4s ease;
+}
+.hl-carousel-slide {
+    min-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hl-carousel-slide--grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    align-items: center;
+}
+.hl-carousel-slide--grid-3 img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    border-radius: 4px;
+    background: var(--color-darker-gray);
+}
+.hl-carousel-slide--grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    align-items: center;
+}
+.hl-carousel-slide--grid-2 img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+.hl-carousel-slide img {
+    width: 100%;
+    display: block;
+    object-fit: contain;
+    max-height: 480px;
+    border-radius: 6px;
+    background: var(--color-darker-gray);
+}
+.hl-carousel-slide video {
+    width: 100%;
+    display: block;
+    max-height: 480px;
+    border-radius: 6px;
+    background: #000;
+}
+.hl-carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(8,12,20,0.6);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: var(--color-light-gray);
+    font-size: 1.8rem;
+    line-height: 1;
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+.hl-carousel-btn:hover {
+    background: rgba(91,164,245,0.25);
+}
+.hl-carousel-prev { left: 0.6rem; }
+.hl-carousel-next { right: 0.6rem; }
+.hl-carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.4rem;
+    margin-top: 0.6rem;
+}
+.hl-carousel-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(197,198,199,0.3);
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.hl-carousel-dot.active {
+    background: var(--color-light-teal);
+}
+
+/* ── Highlight page video ────────────────────────────────────────────── */
+.hl-video {
+    margin: 1.5rem 0;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #000;
+}
+.hl-video video {
+    width: 100%;
+    display: block;
 }
 
 @media (max-width: 600px) {

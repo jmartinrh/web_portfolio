@@ -7,10 +7,18 @@
         "link": "highlight-liveops.html"
     },
     {
-        "id": "highlight-onboarding",
+        "id": "highlight-wayfinding",
         "tag": "Level Design",
         "title": "Solving Wayfinding Issues",
         "image": "images/projects/twdu/TWDU_CY_Wayfinding1.png",
-        "link": "highlight-onboarding.html"
+        "link": "highlight-wayfinding.html"
+    },
+    {
+        "id": "highlight-d20",
+        "tag": "Systems Design · Feature Design",
+        "title": "Bringing the D20 to Fortnite",
+        "image": "images/projects/dnd_d20/ScreenShot00028.png",
+        "link": "highlight-d20.html",
+        "comingSoon": false
     }
 ]
