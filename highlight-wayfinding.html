@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="lightbox.css">
     <script src="https://kit.fontawesome.com/6f58c6ab29.js" crossorigin="anonymous"></script>
 
 </head>
@@ -76,13 +77,13 @@
 
             <div class="hl-carousel">
                 <div class="hl-carousel-track" id="hl-carousel-track">
-                    <div class="hl-carousel-slide"><img src="images/projects/twdu/TWDU_CY_Wayfinding1.png" alt="Wayfinding overview"></div>
-                    <div class="hl-carousel-slide"><img src="images/projects/twdu/TWDU_CY_Wayfinding2.png" alt="Wayfinding detail"></div>
-                    <div class="hl-carousel-slide"><img src="images/projects/twdu/ScreenShot00002.png" alt="Final layout result"></div>
-                    <div class="hl-carousel-slide"><img src="images/projects/twdu/ScreenShot00003.png" alt="Final layout result"></div>
-                    <div class="hl-carousel-slide"><img src="images/projects/twdu/ScreenShot00006.png" alt="Final layout result"></div>
-                    <div class="hl-carousel-slide"><img src="images/projects/twdu/beacon_a.png" alt="Final layout result"></div>
-                    <div class="hl-carousel-slide"><img src="images/projects/twdu/beacon_b.png" alt="Final layout result"></div>
+                    <div class="hl-carousel-slide"><a href="images/projects/twdu/TWDU_CY_Wayfinding1.png" data-lightbox="wayfinding"><img src="images/projects/twdu/TWDU_CY_Wayfinding1.png" alt="Wayfinding overview"></a></div>
+                    <div class="hl-carousel-slide"><a href="images/projects/twdu/TWDU_CY_Wayfinding2.png" data-lightbox="wayfinding"><img src="images/projects/twdu/TWDU_CY_Wayfinding2.png" alt="Wayfinding detail"></a></div>
+                    <div class="hl-carousel-slide"><a href="images/projects/twdu/ScreenShot00002.png" data-lightbox="wayfinding"><img src="images/projects/twdu/ScreenShot00002.png" alt="Final layout result"></a></div>
+                    <div class="hl-carousel-slide"><a href="images/projects/twdu/ScreenShot00003.png" data-lightbox="wayfinding"><img src="images/projects/twdu/ScreenShot00003.png" alt="Final layout result"></a></div>
+                    <div class="hl-carousel-slide"><a href="images/projects/twdu/ScreenShot00006.png" data-lightbox="wayfinding"><img src="images/projects/twdu/ScreenShot00006.png" alt="Final layout result"></a></div>
+                    <div class="hl-carousel-slide"><a href="images/projects/twdu/beacon_a.png" data-lightbox="wayfinding"><img src="images/projects/twdu/beacon_a.png" alt="Final layout result"></a></div>
+                    <div class="hl-carousel-slide"><a href="images/projects/twdu/beacon_b.png" data-lightbox="wayfinding"><img src="images/projects/twdu/beacon_b.png" alt="Final layout result"></a></div>
                 </div>
                 <button class="hl-carousel-btn hl-carousel-prev" aria-label="Previous">&#8249;</button>
                 <button class="hl-carousel-btn hl-carousel-next" aria-label="Next">&#8250;</button>
@@ -117,5 +118,6 @@
         document.querySelector('.hl-carousel-next').addEventListener('click', () => goTo(current + 1));
     })();
     </script>
+    <script src="lightbox-plus-jquery.js"></script>
 </body>
 </html>
