@@ -20,7 +20,7 @@
         "challengeParagraphs": [
             "Creating a legible and navigable interconnected map while avoiding softlocks.",
             "Devising the correct lynch-pin value to balance challenge, economy, and progression.",
-            "Translating load-bearing IP elements into UEFN and keep them recognizable."
+            "Translating load-bearing IP elements into UEFN and keeping them recognizable."
         ],
         "stats": {
             "period": "Jan 16 – Mar 27, 2026",
@@ -61,7 +61,7 @@
         "externalLink": null,
         "platform": "PC / Unity",
         "roles": "Game Designer & Level Designer",
-        "description": "A rogue-like bullet-hell tank adventure. Clear dungeons solo or co-op as you follow a group of rebel tanks fighting against an evil empire.",
+        "description": "A roguelike bullet-hell tank adventure. Clear dungeons solo or co-op as you follow a group of rebel tanks fighting against an evil empire.",
         "bullets": [
             "Designed core game loops and player progression.",
             "Designed player 'boons' and upgrades.",
@@ -189,7 +189,7 @@
         "externalLink": null,
         "platform": "Tabletop Card Game",
         "roles": "Project Lead, Game Designer",
-        "description": "Species is a 2-4 player card game where each takes the role of ecosystem stewards and work towards keeping their chosen ecosystem in balance as new species arrive. The objective is to foster a diverse ecosystem while managing effects triggered by species.",
+        "description": "Species is a 2-4 player card game where each player takes the role of ecosystem stewards and works towards keeping their chosen ecosystem in balance as new species arrive. The objective is to foster a diverse ecosystem while managing effects triggered by species.",
         "downloadLink": {
             "href": "documents/Ruleset Species v1.0.pdf",
             "label": "Download Game v1.0 Ruleset"
@@ -263,7 +263,7 @@
         "externalLink": "https://runiverse.world/",
         "platform": "PC / Web",
         "roles": "RPG Game Designer",
-        "description": "A fantasy pixel art MMORPG with TBA combat system where players play as wizards that can craft their own spells and items.",
+        "description": "A fantasy pixel art MMORPG with a TBA combat system where players play as wizards that can craft their own spells and items.",
         "bullets": [
             "Defined combat and item formulas.",
             "Designed character abilities and items.",
@@ -277,7 +277,7 @@
             "src": "https://www.youtube.com/embed/z1ALPAewJVU?si=UjblGnqBu5d3ZwKF"
         },
         "challengeParagraphs": [
-            "Balancing stats, items, and combat that were intricately tied to a player-led creations and economy.",
+            "Balancing stats, items, and combat that were intricately tied to player-led crafting and economy.",
             "Creating engaging asymmetry in item combinations and stat bases to encourage player builds."
         ],
         "carousel": {
