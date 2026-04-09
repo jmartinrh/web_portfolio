@@ -8,7 +8,7 @@
     },
     {
         "id": "highlight-wayfinding",
-        "tag": "Level Design",
+        "tag": "Feature Design · Level Design",
         "title": "Solving Wayfinding Issues",
         "image": "images/projects/twdu/TWDU_CY_Wayfinding1.png",
         "link": "highlight-wayfinding.html"
@@ -20,5 +20,12 @@
         "image": "images/projects/dnd_d20/ScreenShot00028.png",
         "link": "highlight-d20.html",
         "comingSoon": false
+    },
+    {
+        "id": "highlight-runiverse",
+        "tag": "Systems Design · Feature Development",
+        "title": "JRPG Formulas",
+        "image": "images/highlights/math.jpg",
+        "link": "highlight-runiverse.html"
     }
 ]
