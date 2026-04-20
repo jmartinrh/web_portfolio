@@ -1,0 +1,22 @@
+[
+    {
+        "icon": "fa-solid fa-circle",
+        "title": "Pillar 1",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
+    },
+    {
+        "icon": "fa-solid fa-circle",
+        "title": "Pillar 2",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
+    },
+    {
+        "icon": "fa-solid fa-circle",
+        "title": "Pillar 3",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
+    },
+    {
+        "icon": "fa-solid fa-circle",
+        "title": "Pillar 4",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
+    }
+]

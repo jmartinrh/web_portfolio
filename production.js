@@ -1,3 +1,27 @@
+// ── Render helpers ────────────────────────────────────────────────────────────
+
+function renderPillar(pillar) {
+    return `
+        <div>
+            <i class="${pillar.icon}"></i>
+            <h2>${pillar.title}</h2>
+            <p>${pillar.description}</p>
+        </div>`;
+}
+
+function renderHighlightCard(highlight) {
+    return `
+        <a href="${highlight.link}" class="project-card">
+            <div class="project-card-image">
+                <img src="${highlight.image}" alt="${highlight.title}" loading="lazy">
+            </div>
+            <div class="project-card-info">
+                <p class="highlight-card-tag">${highlight.tag}</p>
+                <h3>${highlight.title}</h3>
+            </div>
+        </a>`;
+}
+
 function renderBullets(bullets) {
     return bullets.map(b => `<li>${b}</li>`).join('');
 }
@@ -17,12 +41,26 @@ function renderExperience(exp) {
         </div>`;
 }
 
+// ── Data loading and init ─────────────────────────────────────────────────────
+
 async function loadData() {
-    const experiences = await fetch('highlights/experiences.json').then(r => r.json());
-    return experiences;
+    const [pillars, highlights, experiences] = await Promise.all([
+        fetch('highlights/production-pillars.json').then(r => r.json()),
+        fetch('highlights/production-highlights.json').then(r => r.json()),
+        fetch('highlights/experiences.json').then(r => r.json()),
+    ]);
+    return { pillars, highlights, experiences };
 }
 
-function renderAll(experiences) {
+function renderAll({ pillars, highlights, experiences }) {
+    document.getElementById('pillars-container').innerHTML =
+        pillars.map(renderPillar).join('');
+
+    document.getElementById('highlights-container').innerHTML = `
+        <div class="portfolio-grid">
+            ${highlights.map(renderHighlightCard).join('')}
+        </div>`;
+
     document.getElementById('experiences-container').innerHTML =
         experiences.map(renderExperience).join('');
 }

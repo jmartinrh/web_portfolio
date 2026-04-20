@@ -1,0 +1,23 @@
+[
+    {
+        "id": "prod-highlight-1",
+        "tag": "Production",
+        "title": "Highlight 1",
+        "image": "images/site/work-1.png",
+        "link": "#"
+    },
+    {
+        "id": "prod-highlight-2",
+        "tag": "Production",
+        "title": "Highlight 2",
+        "image": "images/site/work-2.png",
+        "link": "#"
+    },
+    {
+        "id": "prod-highlight-3",
+        "tag": "Production",
+        "title": "Highlight 3",
+        "image": "images/site/work-3.png",
+        "link": "#"
+    }
+]
