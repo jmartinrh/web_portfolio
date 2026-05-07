@@ -27,5 +27,12 @@
         "title": "JRPG Formulas",
         "image": "images/highlights/math.jpg",
         "link": "highlight-runiverse.html"
+    },
+    {
+        "id": "highlight-pacing",
+        "tag": "Level Design · Optimization",
+        "title": "Pacing & Optimization",
+        "image": "images/highlights/pacing/screengrab.png",
+        "link": "highlight-pacing.html"
     }
 ]

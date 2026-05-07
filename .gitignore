@@ -1,0 +1,9 @@
+# Claude Code local settings
+.claude/
+
+# VS Code Live Server local config
+settings.json
+
+# Working documents not served from the site
+# Note: if you add a CV download link, remove documents/ from here
+documents/

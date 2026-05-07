@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pacing &amp; Optimization — Martín Rodríguez</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="styles.css">
+    <link href="lightbox.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/6f58c6ab29.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <nav>
+            <input type="checkbox" id="menu-toggle" hidden>
+            <label for="menu-toggle" class="fa-solid fa-bars open-icon"></label>
+            <label for="menu-toggle" class="fa-solid fa-xmark close-icon"></label>
+            <div class="title-container">
+                <h2>Martín Rodríguez</h2>
+                <p>Game Designer</p>
+            </div>
+            <ul id="sidemenu">
+                <li><a href="index.html#highlights"><i class="fa-solid fa-arrow-left"></i> Back</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="highlight-hero">
+        <img src="images/highlights/pacing/worldpartition_1200.png" alt="Pacing & Optimization">
+        <div class="highlight-hero-overlay">
+            <span class="highlight-tag">Level Design · Optimization</span>
+            <h1>Pacing &amp; Optimization</h1>
+        </div>
+    </div>
+
+    <div class="highlight-body">
+
+        <section class="highlight-section">
+            <p class="highlight-section-label">Context</p>
+            <h2></h2>
+            <p>D&amp;D Zombie Dragon Adventure was the studio's most ambitious UEFN project. The goal was to deliver a roguelike with 50 non-linear, interconnected rooms across 5 distinct biomes with backtracking, and open sightlines. It was 2x larger than anything we had built before. As the main level designer on the project I was responsible for designing and implementing all 50 rooms.</p>
+        </section>
+
+        <section class="highlight-section">
+            <p class="highlight-section-label">Problem</p>
+            <h2></h2>
+            <p>From my previous work with UEFN islands, it became clear that the planned map layout and asset density would not fit within UEFN's memory constraints. Using data layers was out of the question, as these are replicated in multiplayer games. The non-linear map meant players could take different routes and a complex system of conditions would be needed to load and unload portions of the map correctly. This had a high risk of creating soft-locks or a lot of edge cases to consider.</p>
+        </section>
+
+        <section class="highlight-section">
+            <p class="highlight-section-label">Goal</p>
+            <h2></h2>
+            <p>Design a level architecture and optimization pipeline that would deliver the 50-room scope within memory budget, without compromising the open, non-linear feel that we wanted to achieve with this game.</p>
+        </section>
+
+        <section class="highlight-section">
+            <p class="highlight-section-label">Solution</p>
+            <h2></h2>
+            <p>UEFN has a fairly easy to use World Partition tool, and this was going to be the main avenue of optimization I was going to employ. From previous optimization challenges the studio had faced, I knew the best course of action would be to divide the map into different sections and have the player only load one section at a time. Moving one player from one section to the next would require a teleport and probably a short loading screen.</p>
+
+            <p>The game was already divided into 5 biomes, so this was our starting point. With some experimentation and support from Tech Art, we figured sections of 10 to 12 rooms would support the asset density we were aiming for. Each section would have connections to others where players would be teleported.</p>
+
+            <p>For the setup to work optimally, the sections would have to be in their own World Partition cell with all adjacent cells completely empty of content. This way, even if the player reached the edge of a section/cell, they would not load any additional assets. Only the first section of the game, which was done very early, couldn't be spaced out optimally.</p>
+
+            <p class="highlight-note">Here's how the map ended up looking from above with each area in its own cell.</p>
+
+            <div class="hl-carousel">
+                <div class="hl-carousel-track" id="hl-carousel-track-result">
+                    <div class="hl-carousel-slide"><a href="images/highlights/pacing/WorldPartitionA.png" data-lightbox="pacing"><img src="images/highlights/pacing/WorldPartitionA.png" alt="World Partition overview"></a></div>
+                    <div class="hl-carousel-slide"><a href="images/highlights/pacing/WorldPartitionB.png" data-lightbox="pacing"><img src="images/highlights/pacing/WorldPartitionB.png" alt="World Partition detail"></a></div>
+                </div>
+                <button class="hl-carousel-btn hl-carousel-prev" aria-label="Previous">&#8249;</button>
+                <button class="hl-carousel-btn hl-carousel-next" aria-label="Next">&#8250;</button>
+                <div class="hl-carousel-dots" id="hl-carousel-dots-result"></div>
+            </div>
+
+            <p>One of the original ideas for the game was to create moments where players could see the places they would eventually reach, making the whole map feel truly connected. However, long sightlines and loading faraway assets would create its own set of performance problems. For this reason, I had to redesign a lot of the original level layouts. I had to rework the 2D layouts another designer had delivered and redo interroom connections to hide asset loading wherever I could.</p>
+
+            <p>Teleporting in Fortnite is near instantaneous no matter the platform you are playing on. This is great in current gen consoles as assets don't take long to load. But on older consoles there can be a lot of uncomfortable pop-in as the world loads around the player piece-by-piece. Thus, the game needed a way to hide asset loading.</p>
+
+            <p>We already had a simple teleport loading screen module implemented, but since there is no way to know if a player is using a low or high end platform, loading screen times would be the same across all players. This created a lot of unnecessary friction in current gen devices, so we needed to come up with something else to help hide loading.</p>
+
+            <p>In early prototypes I had presented a few navigational challenges (parkour, ziplines, grindrails, skydives) as ways to add variety in player movement from one room to the next. Taking a cue from what big single player games often do to obscure their loading screens, I proposed we used these navigation challenges to create some of the transitions between biomes. These transitions, then, would serve three purposes: break up pacing, communicate a transition, and hide asset loading.</p>
+
+            <div class="hl-video">
+                <video controls>
+                    <source src="images/highlights/pacing/LevelTransition.mp4" type="video/mp4">
+                </video>
+            </div>
+
+
+            <p>To further hide level-loading, I made the assets around the players' teleport endpoints to be always loaded. It was key not to overdo this, but I made sure that the immediate surrounding after the player was teleported had basic structural assets (ground, walls, big cover pieces). This way I avoided them getting disoriented in the empty void of still-loading assets with invisible collisions.</p>
+        </section>
+
+        <section class="highlight-section">
+            <p class="highlight-section-label">Result</p>
+            <h2></h2>
+            <p>The level design architecture held — players responded well to the layouts with no meaningful navigation complaints. In the end, delivering 51 rooms, 6 rest zones, 3 boss arenas, and 1 hub was only possible because game launch was delayed two months. The game still had performance issues at launch but most were rooted in logic density, something level design alone wouldn't solve. These were solved post launch.</p>
+        </section>
+
+    </div>
+
+    <section class="highlight-other-section">
+        <div class="highlight-other-inner">
+            <h2 class="sub-title">Other Highlights</h2>
+            <div class="portfolio-grid">
+                <a href="highlight-liveops.html" class="project-card">
+                    <div class="project-card-image">
+                        <img src="images/highlights/dfa_closeup.png" alt="Balancing Through Data" loading="lazy">
+                    </div>
+                    <div class="project-card-info">
+                        <p class="highlight-card-tag">Live Operations · Systems Design</p>
+                        <h3>Balancing Through Data</h3>
+                    </div>
+                </a>
+                <a href="highlight-wayfinding.html" class="project-card">
+                    <div class="project-card-image">
+                        <img src="images/projects/twdu/TWDU_CY_Wayfinding1.png" alt="Solving Wayfinding Issues" loading="lazy">
+                    </div>
+                    <div class="project-card-info">
+                        <p class="highlight-card-tag">Level Design</p>
+                        <h3>Solving Wayfinding Issues</h3>
+                    </div>
+                </a>
+                <a href="highlight-d20.html" class="project-card">
+                    <div class="project-card-image">
+                        <img src="images/projects/dnd_d20/ScreenShot00028.png" alt="Bringing the D20 to Fortnite" loading="lazy">
+                    </div>
+                    <div class="project-card-info">
+                        <p class="highlight-card-tag">Systems Design · Feature Design</p>
+                        <h3>Bringing the D20 to Fortnite</h3>
+                    </div>
+                </a>
+                <a href="highlight-runiverse.html" class="project-card">
+                    <div class="project-card-image">
+                        <img src="images/highlights/math.jpg" alt="JRPG Formulas" loading="lazy">
+                    </div>
+                    <div class="project-card-info">
+                        <p class="highlight-card-tag">Systems Design · Feature Development</p>
+                        <h3>JRPG Formulas</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+    (function () {
+        function initCarousel(trackId, dotsId) {
+            const track = document.getElementById(trackId);
+            const dotsWrap = document.getElementById(dotsId);
+            if (!track) return;
+            const slides = track.querySelectorAll('.hl-carousel-slide');
+            const carousel = track.closest('.hl-carousel');
+            let current = 0;
+
+            slides.forEach((_, i) => {
+                const dot = document.createElement('span');
+                dot.className = 'hl-carousel-dot' + (i === 0 ? ' active' : '');
+                dot.addEventListener('click', () => goTo(i));
+                dotsWrap.appendChild(dot);
+            });
+
+            function goTo(n) {
+                current = (n + slides.length) % slides.length;
+                track.style.transform = `translateX(-${current * 100}%)`;
+                dotsWrap.querySelectorAll('.hl-carousel-dot').forEach((d, i) =>
+                    d.classList.toggle('active', i === current));
+            }
+
+            carousel.querySelector('.hl-carousel-prev').addEventListener('click', () => goTo(current - 1));
+            carousel.querySelector('.hl-carousel-next').addEventListener('click', () => goTo(current + 1));
+        }
+
+        initCarousel('hl-carousel-track-result', 'hl-carousel-dots-result');
+    })();
+    </script>
+    <script src="lightbox-plus-jquery.js"></script>
+
+    <section id="contact">
+        <div class="container">
+            <h2 class="sub-title">Let's Connect!</h2>
+            <div class="social-icons icons">
+                <a href="https://www.linkedin.com/in/martinrhprod/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="mailto:martinrh.prod@gmail.com"><i class="fa-regular fa-envelope"></i></a>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
