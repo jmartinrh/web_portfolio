@@ -1,5 +1,24 @@
 [
     {
+        "id": "null-core",
+        "title": "Tank Lore (<em>unreleased</em>)",
+        "externalLink": null,
+        "platform": "PC / Unity",
+        "roles": "Game Designer & Level Designer",
+        "description": "A roguelike bullet-hell adventure. Clear dungeons solo or co-op as you follow a group of rebel tanks fighting against an evil empire.",
+        "bullets": [
+            "Designed core game loops and player progression.",
+            "Designed player 'boons' and upgrades.",
+            "Designed and implemented bosses, enemy encounters and level layouts."
+        ],
+        "thumbnail": "images/site/TankLoreCapsule.png",
+        "media": { "type": "video", "src": "video/NullCore.mp4" },
+        "challengeParagraphs": [
+            "Creating abilities, 'boons' and upgrades that can synergize across different playstyles."
+        ],
+        "carousel": null
+    },
+    {
         "id": "dnd-zombie-dragon",
         "title": "D&D Zombie Dragon Adventure (2026)",
         "externalLink": "https://www.fortnite.com/@teracreators/2525-9596-3235",
@@ -54,26 +73,7 @@
             }
         },
         "carousel": null
-    },
-    {
-        "id": "null-core",
-        "title": "Null Core (<em>unreleased</em>)",
-        "externalLink": null,
-        "platform": "PC / Unity",
-        "roles": "Game Designer & Level Designer",
-        "description": "A roguelike bullet-hell tank adventure. Clear dungeons solo or co-op as you follow a group of rebel tanks fighting against an evil empire.",
-        "bullets": [
-            "Designed core game loops and player progression.",
-            "Designed player 'boons' and upgrades.",
-            "Designed and implemented enemy encounters and level layouts."
-        ],
-        "thumbnail": "images/site/null_core_title.png",
-        "media": { "type": "video", "src": "video/NullCore.mp4" },
-        "challengeParagraphs": [
-            "Creating 'boons' and upgrades that can synergize across different playstyles."
-        ],
-        "carousel": null
-    },
+    },    
     {
         "id": "courtyard-king-twdu",
         "title": "Courtyard King: The Walking Dead Universe (2025)",
